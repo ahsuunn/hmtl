@@ -7,6 +7,7 @@ import { Media } from './collections/Media'
 import { Events } from './collections/Events'
 import { Links } from './collections/Links'
 import { Categories } from './collections/Categories'
+import { Organizers } from './collections/Organizers'
 import sharp from 'sharp'
 import path from 'path'
 import { fileURLToPath } from 'url'
@@ -50,6 +51,7 @@ export default buildConfig({
     Events,
     Links,
     Categories,
+    Organizers,
     // Built-in Users collection
     {
       slug: 'users',

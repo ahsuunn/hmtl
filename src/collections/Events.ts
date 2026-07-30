@@ -107,6 +107,16 @@ export const Events: CollectionConfig = {
       },
     },
     {
+      name: 'organizer',
+      type: 'relationship',
+      relationTo: 'organizers',
+      label: 'Organizer / Team',
+      admin: {
+        position: 'sidebar',
+        description: 'Select or create the department or team hosting this event.',
+      },
+    },
+    {
       name: 'cover',
       type: 'upload',
       relationTo: 'media',
