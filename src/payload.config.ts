@@ -98,6 +98,7 @@ export default buildConfig({
     pool: {
       connectionString: process.env.NEON_DATABASE_URL,
     },
+    push: true,
   }),
 
   // ─────────────────────────────────────────────
