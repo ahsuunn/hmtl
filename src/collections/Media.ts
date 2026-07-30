@@ -100,5 +100,21 @@ export const Media: CollectionConfig = {
         description: 'Optional URL to open when users click on this image (e.g. https://... or /resources).',
       },
     },
+    {
+      name: 'bentoPosition',
+      type: 'select',
+      label: 'Bento Grid Position (ENVMovement)',
+      options: [
+        { label: 'None (Regular Gallery)', value: 'none' },
+        { label: 'Position 1 (Left 2-Row Showcase)', value: '1' },
+        { label: 'Position 2 (Right Top Stacked Landscape)', value: '2' },
+        { label: 'Position 3 (Right Bottom Stacked Landscape)', value: '3' },
+      ],
+      defaultValue: 'none',
+      admin: {
+        position: 'sidebar',
+        description: 'Choose position in the ENVMovement Bento Grid layout.',
+      },
+    },
   ],
 }

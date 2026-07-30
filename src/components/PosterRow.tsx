@@ -20,7 +20,6 @@ export default function PosterRow({ posters }: PosterRowProps) {
   return (
     <section className="max-w-7xl mx-auto px-6 py-16">
       <div className="mb-8">
-        <span className="section-label">Pamflet & Poster</span>
         <h2 className="section-title mt-1">Upcoming Event Posters</h2>
         <div className="divider-green" />
         <p

@@ -6,7 +6,6 @@ import BentoGrid from '@/components/BentoGrid'
 import ResourceLinks from '@/components/ResourceLinks'
 import PosterRow from '@/components/PosterRow'
 import PromoBanner from '@/components/PromoBanner'
-import Link from 'next/link'
 
 export const metadata: Metadata = {
   title: 'HMTL — Himpunan Mahasiswa Teknik Lingkungan',
@@ -51,7 +50,7 @@ export default async function HomePage() {
   })
   const banners = bannersData.docs
 
-  // ── Fetch featured media for bento grid ──
+  // ── Fetch featured media for HMTL Photo Highlights ──
   const mediaData = await payload.find({
     collection: 'media',
     where: { isFeatured: { equals: true } },
@@ -85,7 +84,7 @@ export default async function HomePage() {
 
   return (
     <>
-      {/* ── Hero ── */}
+      {/* ── 1. Hero ── */}
       <Hero
         title={heroTitle}
         subtitle={heroSubtitle}
@@ -93,7 +92,47 @@ export default async function HomePage() {
         imageAlt="HMTL Hero Banner"
       />
 
-      {/* ── Upcoming Event Posters Row ── */}
+      {/* ── 2. Photo Highlights Banner (Directly under Hero) ── */}
+      {featuredMedia.length > 0 && (
+        <section
+          className="py-16 md:py-20"
+          style={{ background: 'linear-gradient(135deg, #0F330A 0%, #01494B 100%)' }}
+        >
+          <div className="max-w-7xl mx-auto px-6">
+            <div className="mb-8">
+              <span
+                className="section-label"
+                style={{ color: 'rgba(247, 244, 213, 0.6)' }}
+              >
+                Galeri HMTL
+              </span>
+              <h2
+                className="section-title mt-1"
+                style={{ color: 'var(--color-cream)' }}
+              >
+                Momen & Highlight HMTL
+              </h2>
+              <div className="h-1 w-16 rounded-full bg-green-600 mb-0 mt-4" />
+            </div>
+
+            <BentoGrid
+              items={featuredMedia.map((m) => ({
+                id: String(m.id),
+                url: m.url ?? undefined,
+                alt: m.alt,
+                caption: m.caption ?? undefined,
+                linkUrl: m.linkUrl ?? undefined,
+                sizes: {
+                  card: { url: (m.sizes as Record<string, { url?: string }>)?.card?.url },
+                  thumbnail: { url: (m.sizes as Record<string, { url?: string }>)?.thumbnail?.url },
+                },
+              }))}
+            />
+          </div>
+        </section>
+      )}
+
+      {/* ── 3. Upcoming Event Posters Row ── */}
       <PosterRow
         posters={posters.map((p) => ({
           id: String(p.id),
@@ -108,7 +147,22 @@ export default async function HomePage() {
         }))}
       />
 
-      {/* ── Events Timeline ── */}
+      {/* ── 4. Promo / Campaign Banner Slider (Placed directly under Event Posters) ── */}
+      <PromoBanner
+        slides={banners.map((b) => ({
+          id: String(b.id),
+          url: b.url ?? undefined,
+          alt: b.alt,
+          caption: b.caption ?? undefined,
+          linkUrl: b.linkUrl ?? undefined,
+          sizes: {
+            banner: { url: (b.sizes as Record<string, { url?: string }>)?.banner?.url },
+            hero: { url: (b.sizes as Record<string, { url?: string }>)?.hero?.url },
+          },
+        }))}
+      />
+
+      {/* ── 5. Events Timeline ── */}
       <section id="events" className="max-w-7xl mx-auto px-6 py-16">
         <div className="mb-12">
           <h2 className="section-title mt-1">Event Timeline</h2>
@@ -139,74 +193,7 @@ export default async function HomePage() {
         />
       </section>
 
-      {/* ── Multi-Image Promo Banner Slider ── */}
-      <PromoBanner
-        slides={banners.map((b) => ({
-          id: String(b.id),
-          url: b.url ?? undefined,
-          alt: b.alt,
-          caption: b.caption ?? undefined,
-          linkUrl: b.linkUrl ?? undefined,
-          sizes: {
-            banner: { url: (b.sizes as Record<string, { url?: string }>)?.banner?.url },
-            hero: { url: (b.sizes as Record<string, { url?: string }>)?.hero?.url },
-          },
-        }))}
-      />
-
-      {/* ── Bento Grid Media (ENVMovement) ── */}
-      {featuredMedia.length > 0 && (
-        <section
-          className="py-24"
-          style={{ background: 'linear-gradient(135deg, #0F330A 0%, #01494B 100%)' }}
-        >
-          <div className="max-w-7xl mx-auto px-6">
-            <div className="mb-12 flex flex-col md:flex-row md:items-end justify-between gap-6">
-              <div>
-                <span
-                  className="section-label"
-                  style={{ color: 'rgba(247, 244, 213, 0.6)' }}
-                >
-                  ENVMovement
-                </span>
-                <h2
-                  className="section-title mt-1"
-                  style={{ color: 'var(--color-cream)' }}
-                >
-                  Dokumentasi Aksi Lingkungan
-                </h2>
-                <div className="h-1 w-16 rounded-full bg-green-600 mb-0 mt-4" />
-              </div>
-              <Link
-                href="/envmovement"
-                className="btn-outline"
-                style={{
-                  borderColor: 'rgba(247, 244, 213, 0.4)',
-                  color: 'var(--color-cream)',
-                }}
-              >
-                Lihat ENVMovement →
-              </Link>
-            </div>
-
-            <BentoGrid
-              items={featuredMedia.map((m) => ({
-                id: String(m.id),
-                url: m.url ?? undefined,
-                alt: m.alt,
-                caption: m.caption ?? undefined,
-                linkUrl: m.linkUrl ?? undefined,
-                sizes: {
-                  card: { url: (m.sizes as Record<string, { url?: string }>)?.card?.url },
-                  thumbnail: { url: (m.sizes as Record<string, { url?: string }>)?.thumbnail?.url },
-                },
-              }))}
-            />
-          </div>
-        </section>
-      )}
-
-      {/* ── Resource Links Snippet ── */}
+      {/* ── 6. Resource Links Snippet ── */}
       <section className="max-w-7xl mx-auto px-6 py-24">
         <div className="mb-12 flex flex-col md:flex-row md:items-end justify-between gap-6">
           <div>

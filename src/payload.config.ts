@@ -174,46 +174,6 @@ export default buildConfig({
           type: 'richText',
           label: 'About / Vision Text',
         },
-        // ── Flexible Campaign / Promo Banner ──
-        {
-          name: 'bannerEnabled',
-          type: 'checkbox',
-          label: 'Show Campaign Banner on Home Page',
-          defaultValue: true,
-        },
-        {
-          name: 'bannerTitle',
-          type: 'text',
-          label: 'Banner Title',
-          defaultValue: 'Katalog & Merchandise HMTL',
-          admin: {
-            description: 'Title for the wide banner section (e.g. Catalog Merch, Recruitment 2026, Campaign).',
-          },
-        },
-        {
-          name: 'bannerSubtitle',
-          type: 'textarea',
-          label: 'Banner Subtitle / Description',
-          defaultValue: 'Dapatkan official merchandise HMTL dan dukung gerakan kelestarian lingkungan.',
-        },
-        {
-          name: 'bannerImage',
-          type: 'upload',
-          relationTo: 'media',
-          label: 'Banner Image',
-        },
-        {
-          name: 'bannerButtonLabel',
-          type: 'text',
-          label: 'Banner Button Text',
-          defaultValue: 'Lihat Selengkapnya',
-        },
-        {
-          name: 'bannerButtonUrl',
-          type: 'text',
-          label: 'Banner Button Link',
-          defaultValue: '/resources',
-        },
         {
           name: 'socialLinks',
           type: 'array',
@@ -244,4 +204,3 @@ export default buildConfig({
     },
   ],
 })
-

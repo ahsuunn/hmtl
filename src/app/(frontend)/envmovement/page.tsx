@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { getPayload } from '@/lib/payload'
 import GalleryGrid from '@/components/GalleryGrid'
+import BentoGrid from '@/components/BentoGrid'
 
 export const metadata: Metadata = {
   title: 'ENVMovement — HMTL',
@@ -27,11 +28,19 @@ export default async function ENVMovementPage() {
 
   const media = data.docs
 
+  // Extract items assigned to Bento Grid positions 1, 2, 3 or featured
+  const bentoMedia = media.filter(
+    (m) =>
+      (m.bentoPosition && m.bentoPosition !== 'none') ||
+      m.isFeatured
+  )
+
   // Group by category
-  const categories = ['environment', 'events', 'organization', 'general'] as const
+  const categories = ['envmovement', 'environment', 'events', 'organization', 'general'] as const
   type MediaCategory = typeof categories[number]
 
   const grouped: Record<MediaCategory, typeof media> = {
+    envmovement: media.filter((m) => m.category === 'envmovement'),
     environment: media.filter((m) => m.category === 'environment'),
     events: media.filter((m) => m.category === 'events'),
     organization: media.filter((m) => m.category === 'organization'),
@@ -39,6 +48,7 @@ export default async function ENVMovementPage() {
   }
 
   const categoryLabels: Record<MediaCategory, string> = {
+    envmovement: 'ENVMovement Highlight',
     environment: 'Aksi Lingkungan & Conservation',
     events: 'Kegiatan & Movement',
     organization: 'Tim & Kolaborasi',
@@ -91,7 +101,39 @@ export default async function ENVMovementPage() {
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-6">
+      <div className="max-w-7xl mx-auto px-6 space-y-16">
+        {/* Bento Grid Showcase Section */}
+        {bentoMedia.length > 0 && (
+          <section className="mb-16">
+            <div className="mb-6">
+              <span className="section-label">Featured Showcase</span>
+              <h2
+                className="section-title text-2xl md:text-4xl"
+                style={{ color: 'var(--color-forest)', letterSpacing: 0 }}
+              >
+                ENVMovement Highlights
+              </h2>
+              <div className="divider-green mt-2" />
+            </div>
+
+            <BentoGrid
+              items={bentoMedia.map((m) => ({
+                id: String(m.id),
+                url: m.url ?? undefined,
+                alt: m.alt,
+                caption: m.caption ?? undefined,
+                linkUrl: m.linkUrl ?? undefined,
+                bentoPosition: (m.bentoPosition as string) || undefined,
+                sizes: {
+                  card: { url: (m.sizes as Record<string, { url?: string }>)?.card?.url },
+                  thumbnail: { url: (m.sizes as Record<string, { url?: string }>)?.thumbnail?.url },
+                },
+              }))}
+            />
+          </section>
+        )}
+
+        {/* Gallery Categories */}
         {media.length > 0 ? (
           <div className="space-y-20">
             {categories
