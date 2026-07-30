@@ -6,6 +6,7 @@ import { resendAdapter } from '@payloadcms/email-resend'
 import { Media } from './collections/Media'
 import { Events } from './collections/Events'
 import { Links } from './collections/Links'
+import { Categories } from './collections/Categories'
 import sharp from 'sharp'
 import path from 'path'
 import { fileURLToPath } from 'url'
@@ -48,6 +49,7 @@ export default buildConfig({
     Media,
     Events,
     Links,
+    Categories,
     // Built-in Users collection
     {
       slug: 'users',

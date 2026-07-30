@@ -25,17 +25,6 @@ const iconMap: Record<string, string> = {
   official: '🏛️',
 }
 
-const categoryLabels: Record<string, string> = {
-  academic: 'Academic',
-  documents: 'Documents',
-  tools: 'Tools',
-  environment: 'Environment',
-  regulations: 'Regulations',
-  events: 'Events',
-  social: 'Social Media',
-  other: 'Other',
-}
-
 export default function ResourceLinks({ links, preview = false }: ResourceLinksProps) {
   return (
     <div>
@@ -80,7 +69,6 @@ function ResourceCard({ link }: { link: ResourceLink }) {
           className="font-body font-semibold text-base truncate group-hover:text-teal transition-colors"
           style={{
             color: 'var(--color-forest)',
-            
             letterSpacing: 0,
           }}
         >
@@ -94,17 +82,18 @@ function ResourceCard({ link }: { link: ResourceLink }) {
             {link.description}
           </p>
         )}
-        <span
-          className="inline-block mt-2 px-2 py-0.5 rounded text-xs font-body"
-          style={{
-            background: 'rgba(124, 161, 52, 0.12)',
-            color: '#618228',
-            
-            letterSpacing: 0,
-          }}
-        >
-          {categoryLabels[link.category] || link.category}
-        </span>
+        {link.category && (
+          <span
+            className="inline-block mt-2 px-2 py-0.5 rounded text-xs font-body"
+            style={{
+              background: 'rgba(124, 161, 52, 0.12)',
+              color: '#618228',
+              letterSpacing: 0,
+            }}
+          >
+            {link.category}
+          </span>
+        )}
       </div>
       <svg
         className="w-4 h-4 opacity-30 group-hover:opacity-100 group-hover:translate-x-1 transition-all flex-shrink-0 mt-1"
@@ -120,7 +109,7 @@ function ResourceCard({ link }: { link: ResourceLink }) {
 
 function ResourcesByCategory({ links }: { links: ResourceLink[] }) {
   const groups = links.reduce<Record<string, ResourceLink[]>>((acc, link) => {
-    const cat = link.category || 'other'
+    const cat = link.category || 'General'
     if (!acc[cat]) acc[cat] = []
     acc[cat].push(link)
     return acc
@@ -135,14 +124,13 @@ function ResourcesByCategory({ links }: { links: ResourceLink[] }) {
               className="font-heading text-2xl font-bold"
               style={{ color: 'var(--color-forest)', letterSpacing: 0 }}
             >
-              {categoryLabels[category] || category}
+              {category}
             </h2>
             <span
               className="font-body text-sm px-2 py-0.5 rounded-full"
               style={{
                 background: 'rgba(1, 73, 75, 0.1)',
                 color: 'var(--color-teal)',
-                
                 letterSpacing: 0,
               }}
             >
@@ -159,5 +147,3 @@ function ResourcesByCategory({ links }: { links: ResourceLink[] }) {
     </div>
   )
 }
-
-

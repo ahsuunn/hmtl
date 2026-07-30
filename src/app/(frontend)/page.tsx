@@ -175,7 +175,10 @@ export default async function HomePage() {
               title: l.title,
               url: l.url,
               description: l.description ?? undefined,
-              category: l.category,
+              category:
+                typeof l.category === 'object' && l.category
+                  ? (l.category as { title?: string }).title || 'General'
+                  : String(l.category || 'General'),
               icon: l.icon ?? undefined,
             }))}
             preview

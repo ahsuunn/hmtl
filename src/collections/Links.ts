@@ -54,19 +54,13 @@ export const Links: CollectionConfig = {
     },
     {
       name: 'category',
-      type: 'select',
+      type: 'relationship',
+      relationTo: 'categories',
       label: 'Category',
       required: true,
-      options: [
-        { label: 'Academic / Study', value: 'academic' },
-        { label: 'Official Documents', value: 'documents' },
-        { label: 'Software & Tools', value: 'tools' },
-        { label: 'Environmental Resources', value: 'environment' },
-        { label: 'Regulations & Standards', value: 'regulations' },
-        { label: 'Events & Registration', value: 'events' },
-        { label: 'Social Media', value: 'social' },
-        { label: 'Other', value: 'other' },
-      ],
+      admin: {
+        description: 'Select or create a category for this link.',
+      },
     },
     {
       name: 'isPublic',
