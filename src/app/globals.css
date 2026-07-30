@@ -1,0 +1,189 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ────────────────────────────────────────
+   HMTL Design System — Global Styles
+   ─────────────────────────────────────── */
+
+@layer base {
+  :root {
+    --color-cream: #f7f4d5;
+    --color-forest: #0f330a;
+    --color-green: #7ca134;
+    --color-slate: #7b99a8;
+    --color-teal: #01494b;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-cream text-forest font-body;
+    font-style: italic;
+    letter-spacing: 0;
+  }
+
+  /* TYPOGRAPHY MANDATE — italic + no letter-spacing on ALL text */
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading;
+    font-style: italic;
+    letter-spacing: 0;
+  }
+
+  p, span, a, li, td, th, label, input, textarea, select, button {
+    font-style: italic;
+    letter-spacing: 0;
+  }
+}
+
+@layer components {
+  /* ── Buttons ── */
+  .btn-primary {
+    @apply inline-flex items-center gap-2 px-6 py-3 rounded-lg font-body text-base font-semibold;
+    @apply bg-teal text-cream;
+    font-style: italic;
+    letter-spacing: 0;
+    transition: background 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
+  }
+  .btn-primary:hover {
+    background-color: var(--color-forest);
+    transform: translateY(-1px);
+    box-shadow: 0 6px 20px rgba(1, 73, 75, 0.35);
+  }
+
+  .btn-outline {
+    @apply inline-flex items-center gap-2 px-6 py-3 rounded-lg font-body text-base font-semibold;
+    @apply border-2 border-teal text-teal bg-transparent;
+    font-style: italic;
+    letter-spacing: 0;
+    transition: all 0.2s ease;
+  }
+  .btn-outline:hover {
+    @apply bg-teal text-cream;
+    transform: translateY(-1px);
+  }
+
+  .btn-green {
+    @apply inline-flex items-center gap-2 px-6 py-3 rounded-lg font-body text-base font-semibold;
+    @apply bg-green-600 text-cream;
+    font-style: italic;
+    letter-spacing: 0;
+    transition: all 0.2s ease;
+  }
+  .btn-green:hover {
+    background-color: #618228;
+    transform: translateY(-1px);
+    box-shadow: 0 6px 20px rgba(124, 161, 52, 0.4);
+  }
+
+  /* ── Cards ── */
+  .card {
+    @apply bg-cream rounded-2xl border border-forest/10 shadow-sm overflow-hidden;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  .card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 16px 40px rgba(15, 51, 10, 0.12);
+  }
+
+  .card-teal {
+    @apply rounded-2xl overflow-hidden;
+    background: var(--color-teal);
+    color: var(--color-cream);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  .card-teal:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 16px 40px rgba(1, 73, 75, 0.35);
+  }
+
+  /* ── Section heading styles ── */
+  .section-label {
+    @apply inline-block text-sm font-body font-semibold uppercase mb-2;
+    font-style: italic;
+    letter-spacing: 0;
+    color: var(--color-teal);
+  }
+
+  .section-title {
+    @apply font-heading text-3xl md:text-5xl font-bold text-forest;
+    font-style: italic;
+    letter-spacing: 0;
+  }
+
+  /* ── Dividers ── */
+  .divider-green {
+    @apply h-1 w-16 rounded-full bg-green-600 mb-6;
+  }
+
+  /* ── Nav ── */
+  .nav-link {
+    @apply font-body text-base text-forest/80 relative;
+    font-style: italic;
+    letter-spacing: 0;
+    transition: color 0.2s;
+  }
+  .nav-link::after {
+    content: '';
+    @apply absolute bottom-0 left-0 w-0 h-px bg-teal;
+    transition: width 0.25s ease;
+  }
+  .nav-link:hover {
+    color: var(--color-teal);
+  }
+  .nav-link:hover::after {
+    @apply w-full;
+  }
+  .nav-link.active {
+    color: var(--color-teal);
+  }
+  .nav-link.active::after {
+    @apply w-full;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Status badge colors */
+  .badge-upcoming {
+    @apply inline-flex items-center px-3 py-1 rounded-full text-sm font-semibold;
+    background: rgba(124, 161, 52, 0.15);
+    color: #618228;
+    font-style: italic;
+    letter-spacing: 0;
+  }
+  .badge-ongoing {
+    @apply inline-flex items-center px-3 py-1 rounded-full text-sm font-semibold;
+    background: rgba(1, 73, 75, 0.15);
+    color: var(--color-teal);
+    font-style: italic;
+    letter-spacing: 0;
+  }
+  .badge-completed {
+    @apply inline-flex items-center px-3 py-1 rounded-full text-sm font-semibold;
+    background: rgba(123, 153, 168, 0.2);
+    color: #5a7585;
+    font-style: italic;
+    letter-spacing: 0;
+  }
+  .badge-cancelled {
+    @apply inline-flex items-center px-3 py-1 rounded-full text-sm font-semibold;
+    background: rgba(15, 51, 10, 0.08);
+    color: var(--color-forest);
+    font-style: italic;
+    letter-spacing: 0;
+  }
+}

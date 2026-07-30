@@ -1,0 +1,161 @@
+import Link from 'next/link'
+
+interface ResourceLink {
+  id: string
+  title: string
+  url: string
+  description?: string
+  category: string
+  icon?: string
+}
+
+interface ResourceLinksProps {
+  links: ResourceLink[]
+  preview?: boolean
+}
+
+const iconMap: Record<string, string> = {
+  document: '📄',
+  link: '🔗',
+  data: '📊',
+  book: '📚',
+  environment: '🌿',
+  tool: '⚙️',
+  social: '📱',
+  official: '🏛️',
+}
+
+const categoryLabels: Record<string, string> = {
+  academic: 'Academic',
+  documents: 'Documents',
+  tools: 'Tools',
+  environment: 'Environment',
+  regulations: 'Regulations',
+  events: 'Events',
+  social: 'Social Media',
+  other: 'Other',
+}
+
+export default function ResourceLinks({ links, preview = false }: ResourceLinksProps) {
+  return (
+    <div>
+      {/* Group by category for full page, flat list for preview */}
+      {preview ? (
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          {links.map((link) => (
+            <ResourceCard key={link.id} link={link} />
+          ))}
+        </div>
+      ) : (
+        <ResourcesByCategory links={links} />
+      )}
+
+      {preview && (
+        <div className="mt-8 flex justify-center">
+          <Link href="/resources" className="btn-primary">
+            Lihat Semua Resources →
+          </Link>
+        </div>
+      )}
+    </div>
+  )
+}
+
+function ResourceCard({ link }: { link: ResourceLink }) {
+  return (
+    <a
+      href={link.url}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="card p-5 flex gap-4 items-start group cursor-pointer block"
+    >
+      <div
+        className="w-10 h-10 rounded-xl flex items-center justify-center text-xl flex-shrink-0 transition-transform duration-200 group-hover:scale-110"
+        style={{ background: 'rgba(1, 73, 75, 0.08)' }}
+      >
+        {iconMap[link.icon || 'link'] || '🔗'}
+      </div>
+      <div className="min-w-0 flex-1">
+        <p
+          className="font-body font-semibold text-base truncate group-hover:text-teal transition-colors"
+          style={{
+            color: 'var(--color-forest)',
+            fontStyle: 'italic',
+            letterSpacing: 0,
+          }}
+        >
+          {link.title}
+        </p>
+        {link.description && (
+          <p
+            className="font-body text-sm opacity-60 mt-1 line-clamp-2"
+            style={{ color: 'var(--color-forest)', fontStyle: 'italic', letterSpacing: 0 }}
+          >
+            {link.description}
+          </p>
+        )}
+        <span
+          className="inline-block mt-2 px-2 py-0.5 rounded text-xs font-body"
+          style={{
+            background: 'rgba(124, 161, 52, 0.12)',
+            color: '#618228',
+            fontStyle: 'italic',
+            letterSpacing: 0,
+          }}
+        >
+          {categoryLabels[link.category] || link.category}
+        </span>
+      </div>
+      <svg
+        className="w-4 h-4 opacity-30 group-hover:opacity-100 group-hover:translate-x-1 transition-all flex-shrink-0 mt-1"
+        fill="none"
+        stroke="var(--color-teal)"
+        viewBox="0 0 24 24"
+      >
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+      </svg>
+    </a>
+  )
+}
+
+function ResourcesByCategory({ links }: { links: ResourceLink[] }) {
+  const groups = links.reduce<Record<string, ResourceLink[]>>((acc, link) => {
+    const cat = link.category || 'other'
+    if (!acc[cat]) acc[cat] = []
+    acc[cat].push(link)
+    return acc
+  }, {})
+
+  return (
+    <div className="space-y-12">
+      {Object.entries(groups).map(([category, catLinks]) => (
+        <div key={category}>
+          <div className="flex items-center gap-3 mb-6">
+            <h2
+              className="font-heading text-2xl font-bold"
+              style={{ color: 'var(--color-forest)', fontStyle: 'italic', letterSpacing: 0 }}
+            >
+              {categoryLabels[category] || category}
+            </h2>
+            <span
+              className="font-body text-sm px-2 py-0.5 rounded-full"
+              style={{
+                background: 'rgba(1, 73, 75, 0.1)',
+                color: 'var(--color-teal)',
+                fontStyle: 'italic',
+                letterSpacing: 0,
+              }}
+            >
+              {catLinks.length}
+            </span>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {catLinks.map((link) => (
+              <ResourceCard key={link.id} link={link} />
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+  )
+}
