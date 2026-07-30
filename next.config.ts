@@ -2,8 +2,16 @@ import type { NextConfig } from 'next'
 import { withPayload } from '@payloadcms/next/withPayload'
 
 const nextConfig: NextConfig = {
-  reactCompiler: false,  
+  reactCompiler: false,
   images: {
+    localPatterns: [
+      {
+        pathname: '/api/media/file/**',
+      },
+      {
+        pathname: '/**',
+      },
+    ],
     remotePatterns: [
       {
         // Vercel Blob public CDN hostname
