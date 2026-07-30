@@ -106,8 +106,8 @@ export default buildConfig({
   plugins: [
     vercelBlobStorage({
       enabled: true,
-      // Enable direct client-side uploads to bypass the 4.5MB serverless limit
-      clientUploads: true,
+      // Disable client-side browser PUT uploads to avoid CORS/400 errors; use server-side upload
+      clientUploads: false,
       collections: {
         media: {
           prefix: 'media',
