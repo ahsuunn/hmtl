@@ -25,33 +25,9 @@ export default function Navbar() {
         borderBottom: '1px solid rgba(15, 51, 10, 0.08)',
       }}
     >
-      <nav className="max-w-7xl mx-auto px-6 flex items-center justify-between h-16">
-        {/* Logo */}
-        <Link href="/" className="flex items-center gap-3 group">
-          <div
-            className="w-9 h-9 rounded-full flex items-center justify-center text-cream font-heading font-bold text-sm"
-            style={{ background: 'var(--color-teal)' }}
-          >
-            HM
-          </div>
-          <div>
-            <span
-              className="font-heading font-bold text-lg leading-none block"
-              style={{ color: 'var(--color-forest)', fontStyle: 'italic', letterSpacing: 0 }}
-            >
-              HMTL
-            </span>
-            <span
-              className="font-body text-xs leading-none block opacity-60"
-              style={{ color: 'var(--color-forest)', fontStyle: 'italic', letterSpacing: 0 }}
-            >
-              Teknik Lingkungan
-            </span>
-          </div>
-        </Link>
-
-        {/* Desktop Nav */}
-        <div className="hidden md:flex items-center gap-8">
+      <nav className="max-w-7xl mx-auto px-6 flex items-center justify-center h-16 relative">
+        {/* Desktop Nav — centered */}
+        <div className="hidden md:flex items-center gap-10">
           {navLinks.map((link) => (
             <Link
               key={link.href}
@@ -61,14 +37,11 @@ export default function Navbar() {
               {link.label}
             </Link>
           ))}
-          <Link href="/admin" className="btn-primary text-sm px-4 py-2">
-            Admin
-          </Link>
         </div>
 
-        {/* Mobile Hamburger */}
+        {/* Mobile Hamburger — positioned right */}
         <button
-          className="md:hidden flex flex-col gap-1.5 p-2"
+          className="md:hidden absolute right-6 flex flex-col gap-1.5 p-2"
           onClick={() => setOpen(!open)}
           aria-label="Toggle menu"
         >
@@ -99,7 +72,7 @@ export default function Navbar() {
       {/* Mobile Menu */}
       {open && (
         <div
-          className="md:hidden px-6 pb-6 pt-2 flex flex-col gap-4"
+          className="md:hidden px-6 pb-6 pt-2 flex flex-col items-center gap-4"
           style={{ borderTop: '1px solid rgba(15, 51, 10, 0.08)' }}
         >
           {navLinks.map((link) => (
@@ -112,11 +85,10 @@ export default function Navbar() {
               {link.label}
             </Link>
           ))}
-          <Link href="/admin" className="btn-primary text-sm px-4 py-2 w-fit">
-            Admin
-          </Link>
         </div>
       )}
     </header>
   )
 }
+
+

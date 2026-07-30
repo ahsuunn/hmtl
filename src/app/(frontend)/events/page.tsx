@@ -67,24 +67,24 @@ export default async function EventsPage() {
           </span>
           <h1
             className="font-heading text-5xl md:text-6xl font-bold"
-            style={{ color: 'var(--color-cream)', fontStyle: 'italic', letterSpacing: 0 }}
+            style={{ color: 'var(--color-cream)', letterSpacing: 0 }}
           >
             Event Timeline
           </h1>
           <p
             className="font-body text-xl mt-4 max-w-2xl opacity-80"
-            style={{ color: 'var(--color-cream)', fontStyle: 'italic', letterSpacing: 0 }}
+            style={{ color: 'var(--color-cream)', letterSpacing: 0 }}
           >
             Semua kegiatan HMTL — dari agenda mendatang hingga kegiatan yang telah berlangsung.
           </p>
-          <div className="flex gap-6 mt-8 text-sm font-body" style={{ fontStyle: 'italic', letterSpacing: 0 }}>
+          <div className="flex gap-6 mt-8 text-sm font-body" style={{ letterSpacing: 0 }}>
             <span className="badge-upcoming">{upcoming.length} Upcoming</span>
             <span
               className="px-3 py-1 rounded-full font-semibold"
               style={{
                 background: 'rgba(247, 244, 213, 0.15)',
                 color: 'var(--color-cream)',
-                fontStyle: 'italic',
+                
                 letterSpacing: 0,
               }}
             >
@@ -100,7 +100,7 @@ export default async function EventsPage() {
           <section className="mb-20">
             <h2
               className="font-heading text-3xl font-bold mb-8"
-              style={{ color: 'var(--color-forest)', fontStyle: 'italic', letterSpacing: 0 }}
+              style={{ color: 'var(--color-forest)', letterSpacing: 0 }}
             >
               Upcoming Events
             </h2>
@@ -113,7 +113,7 @@ export default async function EventsPage() {
           <section>
             <h2
               className="font-heading text-3xl font-bold mb-8 opacity-60"
-              style={{ color: 'var(--color-forest)', fontStyle: 'italic', letterSpacing: 0 }}
+              style={{ color: 'var(--color-forest)', letterSpacing: 0 }}
             >
               Past Events
             </h2>
@@ -128,13 +128,13 @@ export default async function EventsPage() {
             <div className="text-6xl mb-6">📅</div>
             <h2
               className="font-heading text-3xl font-bold mb-3"
-              style={{ color: 'var(--color-forest)', fontStyle: 'italic', letterSpacing: 0 }}
+              style={{ color: 'var(--color-forest)', letterSpacing: 0 }}
             >
               Belum ada events
             </h2>
             <p
               className="font-body text-lg"
-              style={{ color: 'var(--color-forest)', fontStyle: 'italic', letterSpacing: 0 }}
+              style={{ color: 'var(--color-forest)', letterSpacing: 0 }}
             >
               Events akan ditampilkan di sini saat sudah ditambahkan melalui admin.
             </p>
@@ -144,3 +144,5 @@ export default async function EventsPage() {
     </div>
   )
 }
+
+

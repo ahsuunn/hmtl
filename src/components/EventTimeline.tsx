@@ -75,13 +75,13 @@ export default function EventTimeline({ events, preview = false }: EventTimeline
                 <div>
                   <h3
                     className="font-heading text-xl font-semibold mb-1"
-                    style={{ color: 'var(--color-forest)', fontStyle: 'italic', letterSpacing: 0 }}
+                    style={{ color: 'var(--color-forest)', letterSpacing: 0 }}
                   >
                     {event.title}
                   </h3>
                   <p
                     className="font-body text-sm opacity-60"
-                    style={{ color: 'var(--color-forest)', fontStyle: 'italic', letterSpacing: 0 }}
+                    style={{ color: 'var(--color-forest)', letterSpacing: 0 }}
                   >
                     {formatDate(event.date)}
                     {event.endDate && ` — ${formatDate(event.endDate)}`}
@@ -96,7 +96,7 @@ export default function EventTimeline({ events, preview = false }: EventTimeline
               {event.shortDescription && (
                 <p
                   className="font-body text-base opacity-75 line-clamp-2"
-                  style={{ color: 'var(--color-forest)', fontStyle: 'italic', letterSpacing: 0 }}
+                  style={{ color: 'var(--color-forest)', letterSpacing: 0 }}
                 >
                   {event.shortDescription}
                 </p>
@@ -118,13 +118,13 @@ export default function EventTimeline({ events, preview = false }: EventTimeline
         <div className="text-center py-16 opacity-50">
           <p
             className="font-heading text-2xl mb-2"
-            style={{ color: 'var(--color-forest)', fontStyle: 'italic', letterSpacing: 0 }}
+            style={{ color: 'var(--color-forest)', letterSpacing: 0 }}
           >
             Belum ada events
           </p>
           <p
             className="font-body"
-            style={{ color: 'var(--color-forest)', fontStyle: 'italic', letterSpacing: 0 }}
+            style={{ color: 'var(--color-forest)', letterSpacing: 0 }}
           >
             Events akan ditampilkan di sini.
           </p>
@@ -133,3 +133,5 @@ export default function EventTimeline({ events, preview = false }: EventTimeline
     </div>
   )
 }
+
+

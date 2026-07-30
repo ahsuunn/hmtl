@@ -135,3 +135,4 @@ export const Events: CollectionConfig = {
   ],
   timestamps: true,
 }
+

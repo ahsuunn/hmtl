@@ -81,7 +81,7 @@ export default async function HomePage() {
           <div className="divider-green" />
           <p
             className="font-body text-lg opacity-70 max-w-2xl"
-            style={{ color: 'var(--color-forest)', fontStyle: 'italic', letterSpacing: 0 }}
+            style={{ color: 'var(--color-forest)', letterSpacing: 0 }}
           >
             Ikuti rangkaian kegiatan HMTL — seminar, workshop, pengabdian masyarakat, dan lebih banyak lagi.
           </p>
@@ -163,7 +163,7 @@ export default async function HomePage() {
             <div className="divider-green" />
             <p
               className="font-body text-lg opacity-70 max-w-2xl"
-              style={{ color: 'var(--color-forest)', fontStyle: 'italic', letterSpacing: 0 }}
+              style={{ color: 'var(--color-forest)', letterSpacing: 0 }}
             >
               Kumpulan link penting, referensi akademik, dan sumber daya untuk mahasiswa Teknik Lingkungan.
             </p>
@@ -186,7 +186,7 @@ export default async function HomePage() {
           <div className="text-center py-16 opacity-50">
             <p
               className="font-heading text-2xl"
-              style={{ color: 'var(--color-forest)', fontStyle: 'italic', letterSpacing: 0 }}
+              style={{ color: 'var(--color-forest)', letterSpacing: 0 }}
             >
               Belum ada resource yang difeatured
             </p>
@@ -196,3 +196,5 @@ export default async function HomePage() {
     </>
   )
 }
+
+

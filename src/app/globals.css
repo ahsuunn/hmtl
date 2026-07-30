@@ -21,19 +21,18 @@
 
   body {
     @apply bg-cream text-forest font-body;
-    font-style: italic;
     letter-spacing: 0;
   }
 
-  /* TYPOGRAPHY MANDATE — italic + no letter-spacing on ALL text */
+  /* Headings use Playfair Display, italic */
   h1, h2, h3, h4, h5, h6 {
     @apply font-heading;
     font-style: italic;
     letter-spacing: 0;
   }
 
+  /* Body text — normal style, no forced italic */
   p, span, a, li, td, th, label, input, textarea, select, button {
-    font-style: italic;
     letter-spacing: 0;
   }
 }
@@ -43,7 +42,6 @@
   .btn-primary {
     @apply inline-flex items-center gap-2 px-6 py-3 rounded-lg font-body text-base font-semibold;
     @apply bg-teal text-cream;
-    font-style: italic;
     letter-spacing: 0;
     transition: background 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
   }
@@ -56,7 +54,6 @@
   .btn-outline {
     @apply inline-flex items-center gap-2 px-6 py-3 rounded-lg font-body text-base font-semibold;
     @apply border-2 border-teal text-teal bg-transparent;
-    font-style: italic;
     letter-spacing: 0;
     transition: all 0.2s ease;
   }
@@ -68,7 +65,6 @@
   .btn-green {
     @apply inline-flex items-center gap-2 px-6 py-3 rounded-lg font-body text-base font-semibold;
     @apply bg-green-600 text-cream;
-    font-style: italic;
     letter-spacing: 0;
     transition: all 0.2s ease;
   }
@@ -99,7 +95,7 @@
     box-shadow: 0 16px 40px rgba(1, 73, 75, 0.35);
   }
 
-  /* ── Section heading styles ── */
+  /* ── Section labels — italic for decorative feel ── */
   .section-label {
     @apply inline-block text-sm font-body font-semibold uppercase mb-2;
     font-style: italic;
@@ -121,7 +117,6 @@
   /* ── Nav ── */
   .nav-link {
     @apply font-body text-base text-forest/80 relative;
-    font-style: italic;
     letter-spacing: 0;
     transition: color 0.2s;
   }
@@ -162,28 +157,24 @@
     @apply inline-flex items-center px-3 py-1 rounded-full text-sm font-semibold;
     background: rgba(124, 161, 52, 0.15);
     color: #618228;
-    font-style: italic;
     letter-spacing: 0;
   }
   .badge-ongoing {
     @apply inline-flex items-center px-3 py-1 rounded-full text-sm font-semibold;
     background: rgba(1, 73, 75, 0.15);
     color: var(--color-teal);
-    font-style: italic;
     letter-spacing: 0;
   }
   .badge-completed {
     @apply inline-flex items-center px-3 py-1 rounded-full text-sm font-semibold;
     background: rgba(123, 153, 168, 0.2);
     color: #5a7585;
-    font-style: italic;
     letter-spacing: 0;
   }
   .badge-cancelled {
     @apply inline-flex items-center px-3 py-1 rounded-full text-sm font-semibold;
     background: rgba(15, 51, 10, 0.08);
     color: var(--color-forest);
-    font-style: italic;
     letter-spacing: 0;
   }
 }

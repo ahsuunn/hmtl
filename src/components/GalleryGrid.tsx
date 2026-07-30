@@ -48,7 +48,7 @@ export default function GalleryGrid({ items }: GalleryGridProps) {
               {item.caption && (
                 <p
                   className="font-body text-xs"
-                  style={{ color: 'var(--color-cream)', fontStyle: 'italic', letterSpacing: 0 }}
+                  style={{ color: 'var(--color-cream)', letterSpacing: 0 }}
                 >
                   {item.caption}
                 </p>
@@ -103,7 +103,7 @@ export default function GalleryGrid({ items }: GalleryGridProps) {
             {lightbox.caption && (
               <p
                 className="text-center mt-4 font-body text-base opacity-70"
-                style={{ color: 'var(--color-cream)', fontStyle: 'italic', letterSpacing: 0 }}
+                style={{ color: 'var(--color-cream)', letterSpacing: 0 }}
               >
                 {lightbox.caption}
               </p>
@@ -114,3 +114,5 @@ export default function GalleryGrid({ items }: GalleryGridProps) {
     </>
   )
 }
+
+

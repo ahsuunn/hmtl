@@ -8,3 +8,4 @@ import { cache } from 'react'
  * Next.js server render pass (RSC / Server Action).
  */
 export const getPayload = cache(() => _getPayload({ config }))
+

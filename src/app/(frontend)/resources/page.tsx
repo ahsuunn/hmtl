@@ -53,19 +53,19 @@ export default async function ResourcesPage() {
           </span>
           <h1
             className="font-heading text-5xl md:text-6xl font-bold"
-            style={{ color: 'var(--color-cream)', fontStyle: 'italic', letterSpacing: 0 }}
+            style={{ color: 'var(--color-cream)', letterSpacing: 0 }}
           >
             Resource Center
           </h1>
           <p
             className="font-body text-xl mt-4 max-w-2xl opacity-80"
-            style={{ color: 'var(--color-cream)', fontStyle: 'italic', letterSpacing: 0 }}
+            style={{ color: 'var(--color-cream)', letterSpacing: 0 }}
           >
             Link penting, referensi akademik, dan sumber daya pilihan untuk mahasiswa Teknik Lingkungan.
           </p>
           <p
             className="font-body text-sm mt-4 opacity-60"
-            style={{ color: 'var(--color-cream)', fontStyle: 'italic', letterSpacing: 0 }}
+            style={{ color: 'var(--color-cream)', letterSpacing: 0 }}
           >
             {links.length} resource tersedia dalam {categories.length} kategori
           </p>
@@ -89,13 +89,13 @@ export default async function ResourcesPage() {
             <div className="text-6xl mb-6">🔗</div>
             <h2
               className="font-heading text-3xl font-bold mb-3"
-              style={{ color: 'var(--color-forest)', fontStyle: 'italic', letterSpacing: 0 }}
+              style={{ color: 'var(--color-forest)', letterSpacing: 0 }}
             >
               Belum ada resource
             </h2>
             <p
               className="font-body text-lg"
-              style={{ color: 'var(--color-forest)', fontStyle: 'italic', letterSpacing: 0 }}
+              style={{ color: 'var(--color-forest)', letterSpacing: 0 }}
             >
               Resource links akan muncul di sini setelah ditambahkan melalui admin.
             </p>
@@ -105,3 +105,5 @@ export default async function ResourcesPage() {
     </div>
   )
 }
+
+

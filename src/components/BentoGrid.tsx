@@ -42,7 +42,7 @@ export default function BentoGrid({ items }: BentoGridProps) {
           {first.caption && (
             <p
               className="font-body text-sm"
-              style={{ color: 'var(--color-cream)', fontStyle: 'italic', letterSpacing: 0 }}
+              style={{ color: 'var(--color-cream)', letterSpacing: 0 }}
             >
               {first.caption}
             </p>
@@ -70,7 +70,7 @@ export default function BentoGrid({ items }: BentoGridProps) {
             {item.caption && (
               <p
                 className="font-body text-xs"
-                style={{ color: 'var(--color-cream)', fontStyle: 'italic', letterSpacing: 0 }}
+                style={{ color: 'var(--color-cream)', letterSpacing: 0 }}
               >
                 {item.caption}
               </p>
@@ -81,3 +81,5 @@ export default function BentoGrid({ items }: BentoGridProps) {
     </div>
   )
 }
+
+

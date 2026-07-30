@@ -62,7 +62,7 @@ export default function Hero({ title, subtitle, imageUrl, imageAlt }: HeroProps)
               color: 'var(--color-cream)',
               backdropFilter: 'blur(8px)',
               border: '1px solid rgba(247, 244, 213, 0.2)',
-              fontStyle: 'italic',
+              
               letterSpacing: 0,
             }}
           >
@@ -76,7 +76,7 @@ export default function Hero({ title, subtitle, imageUrl, imageAlt }: HeroProps)
           {/* Title */}
           <h1
             className="font-heading text-5xl md:text-7xl font-bold mb-6 leading-tight"
-            style={{ color: 'var(--color-cream)', fontStyle: 'italic', letterSpacing: 0 }}
+            style={{ color: 'var(--color-cream)', letterSpacing: 0 }}
           >
             {title}
           </h1>
@@ -84,7 +84,7 @@ export default function Hero({ title, subtitle, imageUrl, imageAlt }: HeroProps)
           {/* Subtitle */}
           <p
             className="font-body text-xl md:text-2xl mb-10 opacity-80 leading-relaxed"
-            style={{ color: 'var(--color-cream)', fontStyle: 'italic', letterSpacing: 0 }}
+            style={{ color: 'var(--color-cream)', letterSpacing: 0 }}
           >
             {subtitle}
           </p>
@@ -112,7 +112,7 @@ export default function Hero({ title, subtitle, imageUrl, imageAlt }: HeroProps)
                   background: 'rgba(247, 244, 213, 0.1)',
                   color: 'var(--color-cream)',
                   border: '1px solid rgba(247, 244, 213, 0.15)',
-                  fontStyle: 'italic',
+                  
                   letterSpacing: 0,
                   backdropFilter: 'blur(4px)',
                 }}
@@ -138,3 +138,5 @@ export default function Hero({ title, subtitle, imageUrl, imageAlt }: HeroProps)
     </section>
   )
 }
+
+

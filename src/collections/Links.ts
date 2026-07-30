@@ -110,3 +110,4 @@ export const Links: CollectionConfig = {
   ],
   timestamps: true,
 }
+

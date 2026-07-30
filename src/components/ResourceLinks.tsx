@@ -80,7 +80,7 @@ function ResourceCard({ link }: { link: ResourceLink }) {
           className="font-body font-semibold text-base truncate group-hover:text-teal transition-colors"
           style={{
             color: 'var(--color-forest)',
-            fontStyle: 'italic',
+            
             letterSpacing: 0,
           }}
         >
@@ -89,7 +89,7 @@ function ResourceCard({ link }: { link: ResourceLink }) {
         {link.description && (
           <p
             className="font-body text-sm opacity-60 mt-1 line-clamp-2"
-            style={{ color: 'var(--color-forest)', fontStyle: 'italic', letterSpacing: 0 }}
+            style={{ color: 'var(--color-forest)', letterSpacing: 0 }}
           >
             {link.description}
           </p>
@@ -99,7 +99,7 @@ function ResourceCard({ link }: { link: ResourceLink }) {
           style={{
             background: 'rgba(124, 161, 52, 0.12)',
             color: '#618228',
-            fontStyle: 'italic',
+            
             letterSpacing: 0,
           }}
         >
@@ -133,7 +133,7 @@ function ResourcesByCategory({ links }: { links: ResourceLink[] }) {
           <div className="flex items-center gap-3 mb-6">
             <h2
               className="font-heading text-2xl font-bold"
-              style={{ color: 'var(--color-forest)', fontStyle: 'italic', letterSpacing: 0 }}
+              style={{ color: 'var(--color-forest)', letterSpacing: 0 }}
             >
               {categoryLabels[category] || category}
             </h2>
@@ -142,7 +142,7 @@ function ResourcesByCategory({ links }: { links: ResourceLink[] }) {
               style={{
                 background: 'rgba(1, 73, 75, 0.1)',
                 color: 'var(--color-teal)',
-                fontStyle: 'italic',
+                
                 letterSpacing: 0,
               }}
             >
@@ -159,3 +159,5 @@ function ResourcesByCategory({ links }: { links: ResourceLink[] }) {
     </div>
   )
 }
+
+

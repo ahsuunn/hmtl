@@ -35,22 +35,22 @@ export default function Footer({ socialLinks = [] }: FooterProps) {
                 HM
               </div>
               <div>
-                <p className="font-heading text-xl font-bold" style={{ color: 'var(--color-cream)', fontStyle: 'italic', letterSpacing: 0 }}>
+                <p className="font-heading text-xl font-bold" style={{ color: 'var(--color-cream)', letterSpacing: 0 }}>
                   HMTL
                 </p>
-                <p className="font-body text-xs opacity-60" style={{ color: 'var(--color-cream)', fontStyle: 'italic', letterSpacing: 0 }}>
+                <p className="font-body text-xs opacity-60" style={{ color: 'var(--color-cream)', letterSpacing: 0 }}>
                   Himpunan Mahasiswa Teknik Lingkungan
                 </p>
               </div>
             </div>
-            <p className="font-body text-sm opacity-70 max-w-xs" style={{ color: 'var(--color-cream)', fontStyle: 'italic', letterSpacing: 0 }}>
+            <p className="font-body text-sm opacity-70 max-w-xs" style={{ color: 'var(--color-cream)', letterSpacing: 0 }}>
               Efficiency · Transparency · Creativity · Dedicated
             </p>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h3 className="font-heading text-base font-semibold mb-4" style={{ color: 'var(--color-cream)', fontStyle: 'italic', letterSpacing: 0 }}>
+            <h3 className="font-heading text-base font-semibold mb-4" style={{ color: 'var(--color-cream)', letterSpacing: 0 }}>
               Quick Links
             </h3>
             <ul className="space-y-2">
@@ -64,7 +64,7 @@ export default function Footer({ socialLinks = [] }: FooterProps) {
                   <Link
                     href={link.href}
                     className="font-body text-sm opacity-60 hover:opacity-100 transition-opacity"
-                    style={{ color: 'var(--color-cream)', fontStyle: 'italic', letterSpacing: 0 }}
+                    style={{ color: 'var(--color-cream)', letterSpacing: 0 }}
                   >
                     {link.label}
                   </Link>
@@ -76,7 +76,7 @@ export default function Footer({ socialLinks = [] }: FooterProps) {
           {/* Social Links */}
           {socialLinks.length > 0 && (
             <div>
-              <h3 className="font-heading text-base font-semibold mb-4" style={{ color: 'var(--color-cream)', fontStyle: 'italic', letterSpacing: 0 }}>
+              <h3 className="font-heading text-base font-semibold mb-4" style={{ color: 'var(--color-cream)', letterSpacing: 0 }}>
                 Follow Us
               </h3>
               <div className="flex flex-wrap gap-3">
@@ -101,10 +101,10 @@ export default function Footer({ socialLinks = [] }: FooterProps) {
         <div className="mt-12 pt-6 flex flex-col md:flex-row items-center justify-between gap-4"
           style={{ borderTop: '1px solid rgba(247, 244, 213, 0.1)' }}
         >
-          <p className="font-body text-xs opacity-40" style={{ color: 'var(--color-cream)', fontStyle: 'italic', letterSpacing: 0 }}>
+          <p className="font-body text-xs opacity-40" style={{ color: 'var(--color-cream)', letterSpacing: 0 }}>
             © {new Date().getFullYear()} HMTL — Himpunan Mahasiswa Teknik Lingkungan. All rights reserved.
           </p>
-          <p className="font-body text-xs opacity-40" style={{ color: 'var(--color-cream)', fontStyle: 'italic', letterSpacing: 0 }}>
+          <p className="font-body text-xs opacity-40" style={{ color: 'var(--color-cream)', letterSpacing: 0 }}>
             Built with Payload CMS & Next.js
           </p>
         </div>
@@ -112,3 +112,5 @@ export default function Footer({ socialLinks = [] }: FooterProps) {
     </footer>
   )
 }
+
+

@@ -66,19 +66,19 @@ export default async function GalleryPage() {
           </span>
           <h1
             className="font-heading text-5xl md:text-6xl font-bold"
-            style={{ color: 'var(--color-cream)', fontStyle: 'italic', letterSpacing: 0 }}
+            style={{ color: 'var(--color-cream)', letterSpacing: 0 }}
           >
             Photo Gallery
           </h1>
           <p
             className="font-body text-xl mt-4 max-w-2xl opacity-80"
-            style={{ color: 'var(--color-cream)', fontStyle: 'italic', letterSpacing: 0 }}
+            style={{ color: 'var(--color-cream)', letterSpacing: 0 }}
           >
             Setiap momen berharga dari perjalanan HMTL — diabadikan dalam gambar.
           </p>
           <p
             className="font-body text-sm mt-4 opacity-60"
-            style={{ color: 'var(--color-cream)', fontStyle: 'italic', letterSpacing: 0 }}
+            style={{ color: 'var(--color-cream)', letterSpacing: 0 }}
           >
             {media.length} foto dokumentasi
           </p>
@@ -97,7 +97,7 @@ export default async function GalleryPage() {
                       className="font-heading text-2xl md:text-3xl font-bold"
                       style={{
                         color: 'var(--color-forest)',
-                        fontStyle: 'italic',
+                        
                         letterSpacing: 0,
                       }}
                     >
@@ -108,7 +108,7 @@ export default async function GalleryPage() {
                       style={{
                         background: 'rgba(1, 73, 75, 0.1)',
                         color: 'var(--color-teal)',
-                        fontStyle: 'italic',
+                        
                         letterSpacing: 0,
                       }}
                     >
@@ -139,13 +139,13 @@ export default async function GalleryPage() {
             <div className="text-6xl mb-6">📷</div>
             <h2
               className="font-heading text-3xl font-bold mb-3"
-              style={{ color: 'var(--color-forest)', fontStyle: 'italic', letterSpacing: 0 }}
+              style={{ color: 'var(--color-forest)', letterSpacing: 0 }}
             >
               Belum ada foto
             </h2>
             <p
               className="font-body text-lg"
-              style={{ color: 'var(--color-forest)', fontStyle: 'italic', letterSpacing: 0 }}
+              style={{ color: 'var(--color-forest)', letterSpacing: 0 }}
             >
               Foto akan ditampilkan di sini setelah di-upload melalui admin.
             </p>
@@ -155,3 +155,5 @@ export default async function GalleryPage() {
     </div>
   )
 }
+
+

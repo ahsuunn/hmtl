@@ -17,3 +17,5 @@ export default async function FrontendLayout({ children }: { children: React.Rea
     </>
   )
 }
+
+
