@@ -119,6 +119,7 @@ export default async function ENVMovementPage() {
                       url: m.url ?? undefined,
                       alt: m.alt,
                       caption: m.caption ?? undefined,
+                      linkUrl: m.linkUrl ?? undefined,
                       sizes: {
                         card: {
                           url: (m.sizes as Record<string, { url?: string }>)?.card?.url,

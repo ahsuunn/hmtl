@@ -77,6 +77,14 @@ export const Media: CollectionConfig = {
       ],
       defaultValue: 'general',
     },
+    {
+      name: 'linkUrl',
+      type: 'text',
+      label: 'Redirect URL / Target Link',
+      admin: {
+        description: 'Optional URL to open when users click on this image (e.g. https://... or /resources).',
+      },
+    },
   ],
 }
 

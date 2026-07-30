@@ -144,6 +144,7 @@ export default async function HomePage() {
               url: m.url ?? undefined,
               alt: m.alt,
               caption: m.caption ?? undefined,
+              linkUrl: m.linkUrl ?? undefined,
               sizes: {
                 card: { url: (m.sizes as Record<string, { url?: string }>)?.card?.url },
                 thumbnail: { url: (m.sizes as Record<string, { url?: string }>)?.thumbnail?.url },
