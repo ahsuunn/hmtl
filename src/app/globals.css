@@ -76,7 +76,7 @@
 
   /* ── Cards ── */
   .card {
-    @apply bg-cream rounded-2xl border border-forest/10 shadow-sm overflow-hidden;
+    @apply bg-cream rounded-lg border border-forest/10 shadow-sm overflow-hidden;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
   }
   .card:hover {

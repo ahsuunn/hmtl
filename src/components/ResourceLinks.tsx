@@ -84,7 +84,7 @@ function ResourceCard({ link }: { link: ResourceLink }) {
         )}
         {link.category && (
           <span
-            className="inline-block mt-2 px-2 py-0.5 rounded text-xs font-body"
+            className="inline-block mt-2 px-2 py-0.5 rounded-md text-xs font-body"
             style={{
               background: 'rgba(124, 161, 52, 0.12)',
               color: '#618228',
@@ -127,7 +127,7 @@ function ResourcesByCategory({ links }: { links: ResourceLink[] }) {
               {category}
             </h2>
             <span
-              className="font-body text-sm px-2 py-0.5 rounded-full"
+              className="font-body text-sm px-2 py-0.5 rounded-xs"
               style={{
                 background: 'rgba(1, 73, 75, 0.1)',
                 color: 'var(--color-teal)',

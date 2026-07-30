@@ -4,6 +4,8 @@ import Hero from '@/components/Hero'
 import EventTimeline from '@/components/EventTimeline'
 import BentoGrid from '@/components/BentoGrid'
 import ResourceLinks from '@/components/ResourceLinks'
+import PosterRow from '@/components/PosterRow'
+import PromoBanner from '@/components/PromoBanner'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
@@ -30,6 +32,24 @@ export default async function HomePage() {
     },
   })
   const events = eventsData.docs
+
+  // ── Fetch poster media for Poster Row ──
+  const postersData = await payload.find({
+    collection: 'media',
+    where: { category: { equals: 'poster' } },
+    sort: '-createdAt',
+    limit: 8,
+  })
+  const posters = postersData.docs
+
+  // ── Fetch campaign banner media for PromoBanner Carousel ──
+  const bannersData = await payload.find({
+    collection: 'media',
+    where: { category: { equals: 'banner' } },
+    sort: '-createdAt',
+    limit: 10,
+  })
+  const banners = bannersData.docs
 
   // ── Fetch featured media for bento grid ──
   const mediaData = await payload.find({
@@ -73,8 +93,23 @@ export default async function HomePage() {
         imageAlt="HMTL Hero Banner"
       />
 
+      {/* ── Upcoming Event Posters Row ── */}
+      <PosterRow
+        posters={posters.map((p) => ({
+          id: String(p.id),
+          url: p.url ?? undefined,
+          alt: p.alt,
+          caption: p.caption ?? undefined,
+          linkUrl: p.linkUrl ?? undefined,
+          sizes: {
+            poster: { url: (p.sizes as Record<string, { url?: string }>)?.poster?.url },
+            card: { url: (p.sizes as Record<string, { url?: string }>)?.card?.url },
+          },
+        }))}
+      />
+
       {/* ── Events Timeline ── */}
-      <section id="events" className="max-w-7xl mx-auto px-6 py-24">
+      <section id="events" className="max-w-7xl mx-auto px-6 py-16">
         <div className="mb-12">
           <h2 className="section-title mt-1">Event Timeline</h2>
           <div className="divider-green" />
@@ -103,6 +138,21 @@ export default async function HomePage() {
           preview
         />
       </section>
+
+      {/* ── Multi-Image Promo Banner Slider ── */}
+      <PromoBanner
+        slides={banners.map((b) => ({
+          id: String(b.id),
+          url: b.url ?? undefined,
+          alt: b.alt,
+          caption: b.caption ?? undefined,
+          linkUrl: b.linkUrl ?? undefined,
+          sizes: {
+            banner: { url: (b.sizes as Record<string, { url?: string }>)?.banner?.url },
+            hero: { url: (b.sizes as Record<string, { url?: string }>)?.hero?.url },
+          },
+        }))}
+      />
 
       {/* ── Bento Grid Media (ENVMovement) ── */}
       {featuredMedia.length > 0 && (
@@ -139,17 +189,19 @@ export default async function HomePage() {
               </Link>
             </div>
 
-            <BentoGrid items={featuredMedia.map((m) => ({
-              id: String(m.id),
-              url: m.url ?? undefined,
-              alt: m.alt,
-              caption: m.caption ?? undefined,
-              linkUrl: m.linkUrl ?? undefined,
-              sizes: {
-                card: { url: (m.sizes as Record<string, { url?: string }>)?.card?.url },
-                thumbnail: { url: (m.sizes as Record<string, { url?: string }>)?.thumbnail?.url },
-              },
-            }))} />
+            <BentoGrid
+              items={featuredMedia.map((m) => ({
+                id: String(m.id),
+                url: m.url ?? undefined,
+                alt: m.alt,
+                caption: m.caption ?? undefined,
+                linkUrl: m.linkUrl ?? undefined,
+                sizes: {
+                  card: { url: (m.sizes as Record<string, { url?: string }>)?.card?.url },
+                  thumbnail: { url: (m.sizes as Record<string, { url?: string }>)?.thumbnail?.url },
+                },
+              }))}
+            />
           </div>
         </section>
       )}

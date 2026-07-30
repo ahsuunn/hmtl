@@ -15,6 +15,12 @@ export default async function ENVMovementPage() {
 
   const data = await payload.find({
     collection: 'media',
+    where: {
+      or: [
+        { category: { equals: 'envmovement' } },
+        { category: { equals: 'environment' } },
+      ],
+    },
     limit: 100,
     sort: '-createdAt',
   })

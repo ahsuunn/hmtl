@@ -8,7 +8,7 @@ export const Media: CollectionConfig = {
   },
   admin: {
     useAsTitle: 'alt',
-    description: 'Upload photos and images for the gallery and other sections.',
+    description: 'Upload photos, posters, and images for the gallery and other sections.',
     group: 'Content',
   },
   access: {
@@ -26,6 +26,18 @@ export const Media: CollectionConfig = {
       {
         name: 'card',
         width: 800,
+        height: 600,
+        position: 'centre',
+      },
+      {
+        name: 'poster',
+        width: 600,
+        height: 800,
+        position: 'centre',
+      },
+      {
+        name: 'banner',
+        width: 1600,
         height: 600,
         position: 'centre',
       },
@@ -56,7 +68,7 @@ export const Media: CollectionConfig = {
     {
       name: 'isFeatured',
       type: 'checkbox',
-      label: 'Featured (show in bento grid)',
+      label: 'Featured (show in bento grid / home page)',
       defaultValue: false,
     },
     {
@@ -70,6 +82,9 @@ export const Media: CollectionConfig = {
       type: 'select',
       label: 'Category',
       options: [
+        { label: 'ENVMovement', value: 'envmovement' },
+        { label: 'Banner / Slider', value: 'banner' },
+        { label: 'Poster / Pamphlet', value: 'poster' },
         { label: 'Events', value: 'events' },
         { label: 'Organization', value: 'organization' },
         { label: 'Environment', value: 'environment' },
@@ -87,4 +102,3 @@ export const Media: CollectionConfig = {
     },
   ],
 }
-

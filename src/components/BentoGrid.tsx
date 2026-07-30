@@ -17,8 +17,11 @@ interface BentoGridProps {
 }
 
 /**
- * Bento grid layout — first item is large (spans 2 rows),
- * rest fill a mosaic 2-3 col grid.
+ * Modern Asymmetrical Bento Mosaic Grid —
+ * Tile 0: Large Showcase (2x2)
+ * Tile 1: Top Right Card (1x1)
+ * Tile 2: Tall Portrait Feature (1x2)
+ * Tile 3 & 4: Compact Cards (1x1)
  */
 export default function BentoGrid({ items }: BentoGridProps) {
   if (!items.length) return null
@@ -26,26 +29,33 @@ export default function BentoGrid({ items }: BentoGridProps) {
   const [first, ...rest] = items
 
   return (
-    <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4 auto-rows-[200px]">
-      {/* Hero item — spans 2 rows and 2 cols */}
-      <BentoItem item={first} isLarge />
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-5 auto-rows-[220px]">
+      {/* Tile 0: Hero showcase tile — 2 cols & 2 rows */}
+      <BentoItem item={first} className="sm:col-span-2 sm:row-span-2 min-h-[300px]" isLarge />
 
-      {/* Remaining items */}
-      {rest.slice(0, 4).map((item, i) => (
-        <BentoItem key={item.id} item={item} isTall={i === 1} />
-      ))}
+      {/* Tile 1: Top Right */}
+      {rest[0] && <BentoItem item={rest[0]} className="col-span-1 row-span-1" />}
+
+      {/* Tile 2: Tall Portrait Feature */}
+      {rest[1] && <BentoItem item={rest[1]} className="col-span-1 row-span-2 hidden sm:block" />}
+
+      {/* Tile 3: Bottom Left */}
+      {rest[2] && <BentoItem item={rest[2]} className="col-span-1 row-span-1" />}
+
+      {/* Tile 4: Bottom Center */}
+      {rest[3] && <BentoItem item={rest[3]} className="col-span-1 row-span-1" />}
     </div>
   )
 }
 
 function BentoItem({
   item,
+  className = '',
   isLarge = false,
-  isTall = false,
 }: {
   item: MediaItem
+  className?: string
   isLarge?: boolean
-  isTall?: boolean
 }) {
   const isExternal = item.linkUrl?.startsWith('http')
   const Component = item.linkUrl ? 'a' : 'div'
@@ -61,9 +71,9 @@ function BentoItem({
   return (
     <Component
       {...linkProps}
-      className={`relative rounded-2xl overflow-hidden group block ${
-        isLarge ? 'col-span-2 row-span-2' : ''
-      } ${isTall ? 'row-span-2' : ''} ${item.linkUrl ? 'cursor-pointer' : ''}`}
+      className={`relative rounded-3xl overflow-hidden group block bg-forest/20 shadow-md hover:shadow-2xl transition-all duration-500 ${className} ${
+        item.linkUrl ? 'cursor-pointer' : ''
+      }`}
     >
       <Image
         src={
@@ -73,19 +83,20 @@ function BentoItem({
         }
         alt={item.alt}
         fill
-        className="object-cover transition-transform duration-500 group-hover:scale-105"
+        className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
         sizes={isLarge ? '(max-width: 768px) 100vw, 66vw' : '(max-width: 768px) 50vw, 33vw'}
       />
 
+      {/* Gradient overlay on hover */}
       <div
-        className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4"
+        className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-5"
         style={{
-          background: 'linear-gradient(to top, rgba(15,51,10,0.85) 0%, transparent 60%)',
+          background: 'linear-gradient(to top, rgba(15,51,10,0.9) 0%, rgba(1,73,75,0.3) 50%, transparent 100%)',
         }}
       >
         {item.caption && (
           <p
-            className={`font-body ${isLarge ? 'text-sm' : 'text-xs'}`}
+            className={`font-body font-medium ${isLarge ? 'text-base' : 'text-xs md:text-sm'} line-clamp-2`}
             style={{ color: 'var(--color-cream)', letterSpacing: 0 }}
           >
             {item.caption}
@@ -94,7 +105,7 @@ function BentoItem({
 
         {item.linkUrl && (
           <span
-            className="inline-flex items-center gap-1 text-xs font-semibold mt-1"
+            className="inline-flex items-center gap-1 text-xs font-semibold mt-2"
             style={{ color: 'var(--color-green)', letterSpacing: 0 }}
           >
             Buka Link {isExternal ? '↗' : '→'}
