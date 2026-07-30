@@ -2,9 +2,11 @@ import { buildConfig } from 'payload'
 import { postgresAdapter } from '@payloadcms/db-postgres'
 import { lexicalEditor } from '@payloadcms/richtext-lexical'
 import { vercelBlobStorage } from '@payloadcms/storage-vercel-blob'
+import { resendAdapter } from '@payloadcms/email-resend'
 import { Media } from './collections/Media'
 import { Events } from './collections/Events'
 import { Links } from './collections/Links'
+import sharp from 'sharp'
 import path from 'path'
 import { fileURLToPath } from 'url'
 
@@ -12,6 +14,12 @@ const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
 
 export default buildConfig({
+  sharp,
+  email: resendAdapter({
+    defaultFromAddress: process.env.RESEND_FROM_ADDRESS || 'onboarding@resend.dev',
+    defaultFromName: process.env.RESEND_FROM_NAME || 'HMTL Admin',
+    apiKey: process.env.RESEND_API_KEY || '',
+  }),
   // ─────────────────────────────────────────────
   // Admin Panel
   // ─────────────────────────────────────────────

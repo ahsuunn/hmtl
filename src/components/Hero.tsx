@@ -70,18 +70,6 @@ export default function Hero({ title, subtitle, imageUrl, imageAlt }: HeroProps)
             {subtitle}
           </p>
 
-          {/* CTAs */}
-          <div className="flex flex-wrap gap-4">
-            <a href="#events" className="btn-primary">
-              Lihat Events
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-              </svg>
-            </a>
-            <Link href="/resources" className="btn-outline" style={{ borderColor: 'rgba(247,244,213,0.5)', color: 'var(--color-cream)' }}>
-              Resource Center
-            </Link>
-          </div>
         </div>
       </div>
 

@@ -133,19 +133,18 @@ export default async function ENVMovementPage() {
               ))}
           </div>
         ) : (
-          <div className="text-center py-32 opacity-50">
-            <div className="text-6xl mb-6">🌱</div>
-            <h2
-              className="font-heading text-3xl font-bold mb-3"
+          <div className="text-center py-16 opacity-50">
+            <p
+              className="font-heading text-2xl mb-2"
               style={{ color: 'var(--color-forest)', letterSpacing: 0 }}
             >
               Belum ada foto ENVMovement
-            </h2>
+            </p>
             <p
-              className="font-body text-lg"
+              className="font-body"
               style={{ color: 'var(--color-forest)', letterSpacing: 0 }}
             >
-              Foto kegiatan ENVMovement akan ditampilkan di sini setelah di-upload melalui admin.
+              Foto kegiatan ENVMovement akan ditampilkan di sini.
             </p>
           </div>
         )}

@@ -76,7 +76,6 @@ export default async function HomePage() {
       {/* ── Events Timeline ── */}
       <section id="events" className="max-w-7xl mx-auto px-6 py-24">
         <div className="mb-12">
-          <span className="section-label">Agenda & Kegiatan</span>
           <h2 className="section-title mt-1">Event Timeline</h2>
           <div className="divider-green" />
           <p
@@ -158,7 +157,6 @@ export default async function HomePage() {
       <section className="max-w-7xl mx-auto px-6 py-24">
         <div className="mb-12 flex flex-col md:flex-row md:items-end justify-between gap-6">
           <div>
-            <span className="section-label">Resource Center</span>
             <h2 className="section-title mt-1">Link & Sumber Daya</h2>
             <div className="divider-green" />
             <p
@@ -185,10 +183,16 @@ export default async function HomePage() {
         ) : (
           <div className="text-center py-16 opacity-50">
             <p
-              className="font-heading text-2xl"
+              className="font-heading text-2xl mb-2"
               style={{ color: 'var(--color-forest)', letterSpacing: 0 }}
             >
-              Belum ada resource yang difeatured
+              Belum ada resource
+            </p>
+            <p
+              className="font-body"
+              style={{ color: 'var(--color-forest)', letterSpacing: 0 }}
+            >
+              Resource links akan ditampilkan di sini.
             </p>
           </div>
         )}
@@ -196,5 +200,3 @@ export default async function HomePage() {
     </>
   )
 }
-
-

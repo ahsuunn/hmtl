@@ -28,12 +28,6 @@ export default function Footer({ socialLinks = [] }: FooterProps) {
           {/* Brand */}
           <div>
             <div className="flex items-center gap-3 mb-4">
-              <div
-                className="w-10 h-10 rounded-full flex items-center justify-center font-heading font-bold text-sm"
-                style={{ background: 'var(--color-teal)', color: 'var(--color-cream)' }}
-              >
-                HM
-              </div>
               <div>
                 <p className="font-heading text-xl font-bold" style={{ color: 'var(--color-cream)', letterSpacing: 0 }}>
                   HMTL
@@ -43,9 +37,6 @@ export default function Footer({ socialLinks = [] }: FooterProps) {
                 </p>
               </div>
             </div>
-            <p className="font-body text-sm opacity-70 max-w-xs" style={{ color: 'var(--color-cream)', letterSpacing: 0 }}>
-              Efficiency · Transparency · Creativity · Dedicated
-            </p>
           </div>
 
           {/* Quick Links */}

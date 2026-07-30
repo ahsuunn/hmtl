@@ -85,19 +85,18 @@ export default async function ResourcesPage() {
             }))}
           />
         ) : (
-          <div className="text-center py-32 opacity-50">
-            <div className="text-6xl mb-6">🔗</div>
-            <h2
-              className="font-heading text-3xl font-bold mb-3"
+          <div className="text-center py-16 opacity-50">
+            <p
+              className="font-heading text-2xl mb-2"
               style={{ color: 'var(--color-forest)', letterSpacing: 0 }}
             >
               Belum ada resource
-            </h2>
+            </p>
             <p
-              className="font-body text-lg"
+              className="font-body"
               style={{ color: 'var(--color-forest)', letterSpacing: 0 }}
             >
-              Resource links akan muncul di sini setelah ditambahkan melalui admin.
+              Resource links akan ditampilkan di sini.
             </p>
           </div>
         )}
