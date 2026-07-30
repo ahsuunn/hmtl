@@ -56,8 +56,7 @@ export default function Footer({ socialLinks = [] }: FooterProps) {
             <ul className="space-y-2">
               {[
                 { href: '/', label: 'Home' },
-                { href: '/events', label: 'Events' },
-                { href: '/gallery', label: 'Gallery' },
+                { href: '/envmovement', label: 'ENVMovement' },
                 { href: '/resources', label: 'Resource Center' },
               ].map((link) => (
                 <li key={link.href}>
@@ -112,5 +111,3 @@ export default function Footer({ socialLinks = [] }: FooterProps) {
     </footer>
   )
 }
-
-

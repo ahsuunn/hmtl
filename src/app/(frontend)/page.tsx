@@ -74,7 +74,7 @@ export default async function HomePage() {
       />
 
       {/* ── Events Timeline ── */}
-      <section className="max-w-7xl mx-auto px-6 py-24">
+      <section id="events" className="max-w-7xl mx-auto px-6 py-24">
         <div className="mb-12">
           <span className="section-label">Agenda & Kegiatan</span>
           <h2 className="section-title mt-1">Event Timeline</h2>
@@ -105,7 +105,7 @@ export default async function HomePage() {
         />
       </section>
 
-      {/* ── Bento Grid Media ── */}
+      {/* ── Bento Grid Media (ENVMovement) ── */}
       {featuredMedia.length > 0 && (
         <section
           className="py-24"
@@ -118,25 +118,25 @@ export default async function HomePage() {
                   className="section-label"
                   style={{ color: 'rgba(247, 244, 213, 0.6)' }}
                 >
-                  Galeri Foto
+                  ENVMovement
                 </span>
                 <h2
                   className="section-title mt-1"
                   style={{ color: 'var(--color-cream)' }}
                 >
-                  Momen HMTL
+                  Dokumentasi Aksi Lingkungan
                 </h2>
                 <div className="h-1 w-16 rounded-full bg-green-600 mb-0 mt-4" />
               </div>
               <Link
-                href="/gallery"
+                href="/envmovement"
                 className="btn-outline"
                 style={{
                   borderColor: 'rgba(247, 244, 213, 0.4)',
                   color: 'var(--color-cream)',
                 }}
               >
-                Lihat Semua Foto →
+                Lihat ENVMovement →
               </Link>
             </div>
 

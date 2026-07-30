@@ -1,4 +1,3 @@
-import Link from 'next/link'
 
 interface Event {
   id: string
@@ -106,13 +105,7 @@ export default function EventTimeline({ events, preview = false }: EventTimeline
         ))}
       </div>
 
-      {preview && events.length > 4 && (
-        <div className="mt-10 flex justify-center">
-          <Link href="/events" className="btn-outline">
-            Lihat Semua Events →
-          </Link>
-        </div>
-      )}
+
 
       {displayedEvents.length === 0 && (
         <div className="text-center py-16 opacity-50">

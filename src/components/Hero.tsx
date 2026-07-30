@@ -54,25 +54,6 @@ export default function Hero({ title, subtitle, imageUrl, imageAlt }: HeroProps)
       {/* Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-6 w-full">
         <div className="max-w-3xl">
-          {/* Tag */}
-          <div
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-8 text-sm font-body"
-            style={{
-              background: 'rgba(247, 244, 213, 0.15)',
-              color: 'var(--color-cream)',
-              backdropFilter: 'blur(8px)',
-              border: '1px solid rgba(247, 244, 213, 0.2)',
-              
-              letterSpacing: 0,
-            }}
-          >
-            <span
-              className="w-2 h-2 rounded-full animate-pulse inline-block"
-              style={{ background: 'var(--color-green)' }}
-            />
-            Himpunan Mahasiswa Teknik Lingkungan
-          </div>
-
           {/* Title */}
           <h1
             className="font-heading text-5xl md:text-7xl font-bold mb-6 leading-tight"
@@ -91,35 +72,15 @@ export default function Hero({ title, subtitle, imageUrl, imageAlt }: HeroProps)
 
           {/* CTAs */}
           <div className="flex flex-wrap gap-4">
-            <Link href="/events" className="btn-primary">
+            <a href="#events" className="btn-primary">
               Lihat Events
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
               </svg>
-            </Link>
+            </a>
             <Link href="/resources" className="btn-outline" style={{ borderColor: 'rgba(247,244,213,0.5)', color: 'var(--color-cream)' }}>
               Resource Center
             </Link>
-          </div>
-
-          {/* Values pills */}
-          <div className="flex flex-wrap gap-3 mt-12">
-            {['Efficiency', 'Transparency', 'Creativity', 'Dedicated'].map((v) => (
-              <span
-                key={v}
-                className="px-4 py-2 rounded-full font-body text-sm"
-                style={{
-                  background: 'rgba(247, 244, 213, 0.1)',
-                  color: 'var(--color-cream)',
-                  border: '1px solid rgba(247, 244, 213, 0.15)',
-                  
-                  letterSpacing: 0,
-                  backdropFilter: 'blur(4px)',
-                }}
-              >
-                {v}
-              </span>
-            ))}
           </div>
         </div>
       </div>
@@ -138,5 +99,3 @@ export default function Hero({ title, subtitle, imageUrl, imageAlt }: HeroProps)
     </section>
   )
 }
-
-

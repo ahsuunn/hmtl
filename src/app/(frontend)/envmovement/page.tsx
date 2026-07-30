@@ -3,14 +3,14 @@ import { getPayload } from '@/lib/payload'
 import GalleryGrid from '@/components/GalleryGrid'
 
 export const metadata: Metadata = {
-  title: 'Gallery — HMTL',
+  title: 'ENVMovement — HMTL',
   description:
-    'Galeri foto kegiatan HMTL — dokumentasi seminar, kegiatan lapangan, dan momen organisasi.',
+    'Galeri & dokumentasi gerakan ENVMovement oleh Himpunan Mahasiswa Teknik Lingkungan — aksi nyata untuk kelestarian lingkungan.',
 }
 
 export const revalidate = 60
 
-export default async function GalleryPage() {
+export default async function ENVMovementPage() {
   const payload = await getPayload()
 
   const data = await payload.find({
@@ -22,21 +22,21 @@ export default async function GalleryPage() {
   const media = data.docs
 
   // Group by category
-  const categories = ['events', 'organization', 'environment', 'general'] as const
+  const categories = ['environment', 'events', 'organization', 'general'] as const
   type MediaCategory = typeof categories[number]
 
   const grouped: Record<MediaCategory, typeof media> = {
+    environment: media.filter((m) => m.category === 'environment'),
     events: media.filter((m) => m.category === 'events'),
     organization: media.filter((m) => m.category === 'organization'),
-    environment: media.filter((m) => m.category === 'environment'),
     general: media.filter((m) => m.category === 'general' || !m.category),
   }
 
   const categoryLabels: Record<MediaCategory, string> = {
-    events: 'Events & Kegiatan',
-    organization: 'Organisasi',
-    environment: 'Lingkungan',
-    general: 'Umum',
+    environment: 'Aksi Lingkungan & Conservation',
+    events: 'Kegiatan & Movement',
+    organization: 'Tim & Kolaborasi',
+    general: 'Dokumentasi Umum',
   }
 
   return (
@@ -62,25 +62,25 @@ export default async function GalleryPage() {
             className="section-label block mb-2"
             style={{ color: 'rgba(247, 244, 213, 0.6)' }}
           >
-            Dokumentasi
+            Project & Gallery
           </span>
           <h1
             className="font-heading text-5xl md:text-6xl font-bold"
             style={{ color: 'var(--color-cream)', letterSpacing: 0 }}
           >
-            Photo Gallery
+            ENVMovement
           </h1>
           <p
             className="font-body text-xl mt-4 max-w-2xl opacity-80"
             style={{ color: 'var(--color-cream)', letterSpacing: 0 }}
           >
-            Setiap momen berharga dari perjalanan HMTL — diabadikan dalam gambar.
+            Gerakan dan dokumentasi aksi lingkungan HMTL — dedikasi nyata untuk kelestarian bumi dan kesadaran ekologis.
           </p>
           <p
             className="font-body text-sm mt-4 opacity-60"
             style={{ color: 'var(--color-cream)', letterSpacing: 0 }}
           >
-            {media.length} foto dokumentasi
+            {media.length} foto dokumentasi proyek
           </p>
         </div>
       </div>
@@ -97,7 +97,6 @@ export default async function GalleryPage() {
                       className="font-heading text-2xl md:text-3xl font-bold"
                       style={{
                         color: 'var(--color-forest)',
-                        
                         letterSpacing: 0,
                       }}
                     >
@@ -108,7 +107,6 @@ export default async function GalleryPage() {
                       style={{
                         background: 'rgba(1, 73, 75, 0.1)',
                         color: 'var(--color-teal)',
-                        
                         letterSpacing: 0,
                       }}
                     >
@@ -136,18 +134,18 @@ export default async function GalleryPage() {
           </div>
         ) : (
           <div className="text-center py-32 opacity-50">
-            <div className="text-6xl mb-6">📷</div>
+            <div className="text-6xl mb-6">🌱</div>
             <h2
               className="font-heading text-3xl font-bold mb-3"
               style={{ color: 'var(--color-forest)', letterSpacing: 0 }}
             >
-              Belum ada foto
+              Belum ada foto ENVMovement
             </h2>
             <p
               className="font-body text-lg"
               style={{ color: 'var(--color-forest)', letterSpacing: 0 }}
             >
-              Foto akan ditampilkan di sini setelah di-upload melalui admin.
+              Foto kegiatan ENVMovement akan ditampilkan di sini setelah di-upload melalui admin.
             </p>
           </div>
         )}
@@ -155,5 +153,3 @@ export default async function GalleryPage() {
     </div>
   )
 }
-
-
