@@ -184,6 +184,15 @@ export default async function HomePage() {
             location: e.location ?? undefined,
             shortDescription: e.shortDescription ?? undefined,
             status: e.status as 'upcoming' | 'ongoing' | 'completed' | 'cancelled',
+            organizer:
+              typeof e.organizer === 'object' && e.organizer
+                ? {
+                    id: String((e.organizer as { id?: string }).id),
+                    title: (e.organizer as { title?: string }).title || '',
+                    color: (e.organizer as { color?: string }).color || undefined,
+                    customColor: (e.organizer as { customColor?: string }).customColor || undefined,
+                  }
+                : undefined,
             cover:
               typeof e.cover === 'object' && e.cover
                 ? { url: (e.cover as { url?: string }).url, alt: (e.cover as { alt?: string }).alt }
