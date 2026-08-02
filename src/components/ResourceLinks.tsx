@@ -1,4 +1,16 @@
 import Link from 'next/link'
+import {
+  FileText,
+  Globe,
+  BarChart3,
+  BookOpen,
+  Leaf,
+  Wrench,
+  Share2,
+  Landmark,
+  ExternalLink,
+  LucideIcon,
+} from 'lucide-react'
 
 interface ResourceLink {
   id: string
@@ -14,15 +26,15 @@ interface ResourceLinksProps {
   preview?: boolean
 }
 
-const iconMap: Record<string, string> = {
-  document: '📄',
-  link: '🔗',
-  data: '📊',
-  book: '📚',
-  environment: '🌿',
-  tool: '⚙️',
-  social: '📱',
-  official: '🏛️',
+const iconComponentMap: Record<string, LucideIcon> = {
+  document: FileText,
+  link: Globe,
+  data: BarChart3,
+  book: BookOpen,
+  environment: Leaf,
+  tool: Wrench,
+  social: Share2,
+  official: Landmark,
 }
 
 export default function ResourceLinks({ links, preview = false }: ResourceLinksProps) {
@@ -51,6 +63,8 @@ export default function ResourceLinks({ links, preview = false }: ResourceLinksP
 }
 
 function ResourceCard({ link }: { link: ResourceLink }) {
+  const IconComponent = iconComponentMap[link.icon || 'link'] || Globe
+
   return (
     <a
       href={link.url}
@@ -59,10 +73,10 @@ function ResourceCard({ link }: { link: ResourceLink }) {
       className="card p-5 flex gap-4 items-start group cursor-pointer block"
     >
       <div
-        className="w-10 h-10 rounded-xl flex items-center justify-center text-xl flex-shrink-0 transition-transform duration-200 group-hover:scale-110"
-        style={{ background: 'rgba(1, 73, 75, 0.08)' }}
+        className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0 transition-transform duration-200 group-hover:scale-105"
+        style={{ background: 'rgba(1, 73, 75, 0.08)', color: 'var(--color-teal)' }}
       >
-        {iconMap[link.icon || 'link'] || '🔗'}
+        <IconComponent className="w-5 h-5" strokeWidth={1.75} />
       </div>
       <div className="min-w-0 flex-1">
         <p
@@ -95,14 +109,11 @@ function ResourceCard({ link }: { link: ResourceLink }) {
           </span>
         )}
       </div>
-      <svg
-        className="w-4 h-4 opacity-30 group-hover:opacity-100 group-hover:translate-x-1 transition-all flex-shrink-0 mt-1"
-        fill="none"
-        stroke="var(--color-teal)"
-        viewBox="0 0 24 24"
-      >
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-      </svg>
+      <ExternalLink
+        className="w-4 h-4 opacity-30 group-hover:opacity-100 group-hover:translate-x-0.5 transition-all flex-shrink-0 mt-1"
+        style={{ color: 'var(--color-teal)' }}
+        strokeWidth={2}
+      />
     </a>
   )
 }
