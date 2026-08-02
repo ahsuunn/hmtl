@@ -45,12 +45,6 @@ export default async function ResourcesPage() {
         />
 
         <div className="relative z-10 max-w-7xl mx-auto px-6">
-          <span
-            className="section-label block mb-2"
-            style={{ color: 'rgba(247, 244, 213, 0.6)' }}
-          >
-            Sumber Daya
-          </span>
           <h1
             className="font-heading text-5xl md:text-6xl font-bold"
             style={{ color: 'var(--color-cream)', letterSpacing: 0 }}

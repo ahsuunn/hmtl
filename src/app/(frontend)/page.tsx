@@ -92,43 +92,31 @@ export default async function HomePage() {
         imageAlt="HMTL Hero Banner"
       />
 
-      {/* ── 2. Photo Highlights Banner (Directly under Hero) ── */}
+      {/* ── 2. Foto-foto HMTL Banner Slider (Directly under Hero) ── */}
       {featuredMedia.length > 0 && (
-        <section
-          className="py-16 md:py-20"
-          style={{ background: 'linear-gradient(135deg, #0F330A 0%, #01494B 100%)' }}
-        >
-          <div className="max-w-7xl mx-auto px-6">
-            <div className="mb-8">
-              <span
-                className="section-label"
-                style={{ color: 'rgba(247, 244, 213, 0.6)' }}
-              >
-                Galeri HMTL
-              </span>
-              <h2
-                className="section-title mt-1"
-                style={{ color: 'var(--color-cream)' }}
-              >
-                Momen & Highlight HMTL
-              </h2>
-              <div className="h-1 w-16 rounded-full bg-green-600 mb-0 mt-4" />
-            </div>
-
-            <BentoGrid
-              items={featuredMedia.map((m) => ({
-                id: String(m.id),
-                url: m.url ?? undefined,
-                alt: m.alt,
-                caption: m.caption ?? undefined,
-                linkUrl: m.linkUrl ?? undefined,
-                sizes: {
-                  card: { url: (m.sizes as Record<string, { url?: string }>)?.card?.url },
-                  thumbnail: { url: (m.sizes as Record<string, { url?: string }>)?.thumbnail?.url },
-                },
-              }))}
-            />
+        <section className="py-12 bg-forest/5">
+          <div className="max-w-7xl mx-auto px-6 mb-4">
+            <h2 className="section-title text-3xl font-bold" style={{ color: 'var(--color-forest)' }}>
+              Foto-foto HMTL
+            </h2>
+            <div className="divider-green mt-2" />
           </div>
+
+          <PromoBanner
+            slides={featuredMedia.map((m) => ({
+              id: String(m.id),
+              url: m.url ?? undefined,
+              alt: m.alt,
+              caption: m.caption ?? undefined,
+              linkUrl: m.linkUrl ?? undefined,
+              sizes: {
+                banner: { url: (m.sizes as Record<string, { url?: string }>)?.card?.url || m.url || undefined },
+                hero: { url: (m.sizes as Record<string, { url?: string }>)?.hero?.url || m.url || undefined },
+              },
+            }))}
+            autoPlayInterval={5000}
+            heightClassName="min-h-[380px] md:min-h-[480px] lg:min-h-[540px] aspect-[16/8] md:aspect-[16/7]"
+          />
         </section>
       )}
 
@@ -160,6 +148,7 @@ export default async function HomePage() {
             hero: { url: (b.sizes as Record<string, { url?: string }>)?.hero?.url },
           },
         }))}
+        heightClassName="min-h-[280px] md:min-h-[360px] lg:min-h-[400px] aspect-[16/6]"
       />
 
       {/* ── 5. Events Timeline ── */}

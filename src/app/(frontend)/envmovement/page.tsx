@@ -48,7 +48,7 @@ export default async function ENVMovementPage() {
   }
 
   const categoryLabels: Record<MediaCategory, string> = {
-    envmovement: 'ENVMovement Highlight',
+    envmovement: 'ENVMovement Gallery',
     environment: 'Aksi Lingkungan & Conservation',
     events: 'Kegiatan & Movement',
     organization: 'Tim & Kolaborasi',
@@ -74,12 +74,6 @@ export default async function ENVMovementPage() {
         />
 
         <div className="relative z-10 max-w-7xl mx-auto px-6">
-          <span
-            className="section-label block mb-2"
-            style={{ color: 'rgba(247, 244, 213, 0.6)' }}
-          >
-            Project & Gallery
-          </span>
           <h1
             className="font-heading text-5xl md:text-6xl font-bold"
             style={{ color: 'var(--color-cream)', letterSpacing: 0 }}
@@ -106,7 +100,6 @@ export default async function ENVMovementPage() {
         {bentoMedia.length > 0 && (
           <section className="mb-16">
             <div className="mb-6">
-              <span className="section-label">Featured Showcase</span>
               <h2
                 className="section-title text-2xl md:text-4xl"
                 style={{ color: 'var(--color-forest)', letterSpacing: 0 }}
