@@ -298,26 +298,26 @@ export default function EventTimeline({ events }: EventTimelineProps) {
               return (
                 <div
                   key={event.id}
-                  className="card p-6 shadow-sm hover:shadow-md transition-shadow relative overflow-hidden group"
+                  className="p-4 rounded-sm border bg-cream/90 relative"
                   style={{
-                    borderLeft: `5px solid ${teamColor}`,
+                    borderLeft: `4px solid ${teamColor}`,
                   }}
                 >
-                  <div className="flex flex-wrap items-start justify-between gap-3 mb-2">
-                    {/* Date Badge */}
-                    <div className="flex items-center gap-2">
+                  <div className="flex flex-wrap items-center justify-between gap-2 mb-1.5">
+                    {/* Date & Team Badges */}
+                    <div className="flex items-center gap-2 flex-wrap">
                       <span
-                        className="font-body text-xs px-2.5 py-1 rounded-md font-semibold"
-                        style={{ background: 'rgba(15, 51, 10, 0.08)', color: 'var(--color-forest)' }}
+                        className="font-body text-xs px-2 py-0.5 rounded font-semibold text-forest/80"
+                        style={{ background: 'rgba(15, 51, 10, 0.06)' }}
                       >
-                        📅 {formatDate(event.date)}
+                        {formatDate(event.date)}
                         {event.endDate && ` — ${formatDate(event.endDate)}`}
                       </span>
 
                       {/* Team / Organizer Badge */}
                       {event.organizer && (
                         <span
-                          className="font-body text-xs px-2.5 py-1 rounded-md font-semibold text-cream"
+                          className="font-body text-[11px] px-2 py-0.5 rounded font-semibold text-cream"
                           style={{ background: teamColor }}
                         >
                           {event.organizer.title}
@@ -333,7 +333,7 @@ export default function EventTimeline({ events }: EventTimelineProps) {
 
                   {/* Event Title */}
                   <h3
-                    className="font-heading text-xl font-bold mt-2 mb-1 group-hover:text-teal transition-colors"
+                    className="font-heading text-lg font-bold mt-1 mb-0.5"
                     style={{ color: 'var(--color-forest)', letterSpacing: 0 }}
                   >
                     {event.title}
@@ -342,8 +342,8 @@ export default function EventTimeline({ events }: EventTimelineProps) {
                   {/* Location */}
                   {event.location && (
                     <p
-                      className="font-body text-xs opacity-70 mb-3 flex items-center gap-1"
-                      style={{ color: 'var(--color-forest)', letterSpacing: 0 }}
+                      className="font-body text-xs text-forest/70 mb-1"
+                      style={{ letterSpacing: 0 }}
                     >
                       📍 {event.location}
                     </p>
@@ -352,8 +352,8 @@ export default function EventTimeline({ events }: EventTimelineProps) {
                   {/* Short Description */}
                   {event.shortDescription && (
                     <p
-                      className="font-body text-sm opacity-80 leading-relaxed line-clamp-2"
-                      style={{ color: 'var(--color-forest)', letterSpacing: 0 }}
+                      className="font-body text-xs text-forest/80 line-clamp-2 leading-relaxed"
+                      style={{ letterSpacing: 0 }}
                     >
                       {event.shortDescription}
                     </p>
