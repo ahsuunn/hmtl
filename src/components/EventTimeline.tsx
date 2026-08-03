@@ -130,9 +130,9 @@ export default function EventTimeline({ events }: EventTimelineProps) {
 
   return (
     <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-      {/* ── Left Panel: Interactive Calendar Widget (col-span-5) ── */}
+      {/* ── Left Panel: Interactive Calendar Widget ── */}
       <div
-        className="lg:col-span-5 card p-6 shadow-lg rounded-3xl sticky top-24"
+        className="lg:col-span-5 order-2 lg:order-1 card p-6 shadow-lg rounded-3xl lg:sticky lg:top-24"
         style={{ background: 'rgba(247, 244, 213, 0.95)', borderColor: 'rgba(15, 51, 10, 0.12)' }}
       >
         {/* Calendar Month Header */}
@@ -263,8 +263,8 @@ export default function EventTimeline({ events }: EventTimelineProps) {
         )}
       </div>
 
-      {/* ── Right Panel: Event Timeline Feed (col-span-7) ── */}
-      <div className="lg:col-span-7 space-y-6">
+      {/* ── Right Panel: Event Timeline Feed ── */}
+      <div className="lg:col-span-7 order-1 lg:order-2 space-y-6">
         {/* Status Filter Bar */}
         <div className="flex flex-wrap items-center gap-2 mb-4">
           <span className="text-xs font-semibold opacity-60 mr-2 text-forest">Filter Status:</span>
@@ -345,7 +345,7 @@ export default function EventTimeline({ events }: EventTimelineProps) {
                       className="font-body text-xs text-forest/70 mb-1"
                       style={{ letterSpacing: 0 }}
                     >
-                      📍 {event.location}
+                      {event.location}
                     </p>
                   )}
 

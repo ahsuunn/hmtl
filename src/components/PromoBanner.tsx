@@ -56,7 +56,7 @@ export default function PromoBanner({
 
   if (!hasSlides) {
     return (
-      <section className="max-w-7xl mx-auto px-6 py-6">
+      <div className="max-w-7xl mx-auto px-6">
         <div
           className="relative rounded-3xl overflow-hidden p-8 text-center flex flex-col items-center justify-center min-h-[220px]"
           style={{
@@ -76,7 +76,7 @@ export default function PromoBanner({
             Upload foto di CMS admin untuk menampilkan banner slider di sini.
           </p>
         </div>
-      </section>
+      </div>
     )
   }
 
@@ -99,7 +99,7 @@ export default function PromoBanner({
     : {}
 
   return (
-    <section className="max-w-7xl mx-auto px-6 py-6">
+    <div className="max-w-7xl mx-auto px-6">
       <div
         className={`relative rounded-3xl overflow-hidden group shadow-xl bg-forest/20 ${heightClassName}`}
         onMouseEnter={() => setIsHovered(true)}
@@ -158,6 +158,6 @@ export default function PromoBanner({
           </div>
         )}
       </div>
-    </section>
+    </div>
   )
 }
