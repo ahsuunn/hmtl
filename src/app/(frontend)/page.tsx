@@ -94,7 +94,7 @@ export default async function HomePage() {
 
       {/* ── 2. Foto-foto HMTL Banner Slider (Directly under Hero) ── */}
       {featuredMedia.length > 0 && (
-        <section className="py-12 bg-forest/5">
+        <section className="py-12 bg-gradient-to-b from-forest/10 to-transparent">
           <div className="max-w-7xl mx-auto px-6 mb-4">
             <h2 className="section-title text-3xl font-bold" style={{ color: 'var(--color-forest)' }}>
               Foto-foto HMTL
@@ -115,7 +115,7 @@ export default async function HomePage() {
               },
             }))}
             autoPlayInterval={5000}
-            heightClassName="min-h-[380px] md:min-h-[480px] lg:min-h-[540px] aspect-[16/8] md:aspect-[16/7]"
+            heightClassName="min-h-[280px] md:min-h-[400px] lg:min-h-[480px]"
           />
         </section>
       )}

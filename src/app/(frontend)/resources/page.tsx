@@ -28,11 +28,11 @@ export default async function ResourcesPage() {
   const categories = [...new Set(links.map((l) => l.category))].filter(Boolean)
 
   return (
-    <div className="min-h-screen pt-24 pb-32">
+    <div className="min-h-screen pb-32">
       {/* Page Header */}
       <div
-        className="py-20 mb-16 relative overflow-hidden"
-        style={{ background: 'var(--color-teal)' }}
+        className="pt-28 pb-16 relative overflow-hidden"
+        style={{ background: 'linear-gradient(135deg, #01494B 0%, #0F330A 100%)' }}
       >
         {/* Decorative circles */}
         <div
@@ -66,7 +66,7 @@ export default async function ResourcesPage() {
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-6">
+      <div className="py-12 max-w-7xl mx-auto px-6">
         {links.length > 0 ? (
           <ResourceLinks
             links={links.map((l) => ({

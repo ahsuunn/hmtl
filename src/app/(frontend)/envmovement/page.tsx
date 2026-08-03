@@ -48,7 +48,7 @@ export default async function ENVMovementPage() {
   }
 
   const categoryLabels: Record<MediaCategory, string> = {
-    envmovement: 'ENVMovement Gallery',
+    envmovement: 'Laskar Hijau Gallery',
     environment: 'Aksi Lingkungan & Conservation',
     events: 'Kegiatan & Movement',
     organization: 'Tim & Kolaborasi',
@@ -56,10 +56,10 @@ export default async function ENVMovementPage() {
   }
 
   return (
-    <div className="min-h-screen pt-24 pb-32">
+    <div className="min-h-screen pb-32">
       {/* Page Header */}
       <div
-        className="py-20 mb-16 relative overflow-hidden"
+        className="pt-28 pb-16 relative overflow-hidden"
         style={{
           background: 'linear-gradient(135deg, #01494B 0%, #0F330A 100%)',
         }}
@@ -95,16 +95,16 @@ export default async function ENVMovementPage() {
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-6 space-y-16">
-        {/* Bento Grid Showcase Section */}
-        {bentoMedia.length > 0 && (
-          <section className="mb-16">
+      {/* Bento Grid Showcase Section */}
+      {bentoMedia.length > 0 && (
+        <section className="py-12 bg-gradient-to-b from-forest/10 to-transparent mb-12">
+          <div className="max-w-7xl mx-auto px-6">
             <div className="mb-6">
               <h2
                 className="section-title text-2xl md:text-4xl"
                 style={{ color: 'var(--color-forest)', letterSpacing: 0 }}
               >
-                Laskar Hijau Gallery
+                Laskar Hijau Highlights
               </h2>
               <div className="divider-green mt-2" />
             </div>
@@ -123,9 +123,11 @@ export default async function ENVMovementPage() {
                 },
               }))}
             />
-          </section>
-        )}
+          </div>
+        </section>
+      )}
 
+      <div className="max-w-7xl mx-auto px-6 space-y-16">
         {/* Gallery Categories */}
         {media.length > 0 ? (
           <div className="space-y-20">
