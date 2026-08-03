@@ -78,6 +78,46 @@ export const Media: CollectionConfig = {
       defaultValue: false,
     },
     {
+      name: 'isFeaturedBpa',
+      type: 'checkbox',
+      label: 'Featured in BPA Banner',
+      defaultValue: false,
+      admin: {
+        position: 'sidebar',
+        description: 'Show in BPA page photo slider.',
+      },
+    },
+    {
+      name: 'isFeaturedBadsen',
+      type: 'checkbox',
+      label: 'Featured in Badsen Banner',
+      defaultValue: false,
+      admin: {
+        position: 'sidebar',
+        description: 'Show in Badan Kesenatoran page photo slider.',
+      },
+    },
+    {
+      name: 'isBpaInstagram',
+      type: 'checkbox',
+      label: 'Use as BPA Instagram Thumbnail',
+      defaultValue: false,
+      admin: {
+        position: 'sidebar',
+        description: 'Single image shown in the BPA Instagram feed panel. Upload a new image to update.',
+      },
+    },
+    {
+      name: 'isBpaOfTheMonth',
+      type: 'checkbox',
+      label: 'BPA of the Month Poster',
+      defaultValue: false,
+      admin: {
+        position: 'sidebar',
+        description: 'Shown in the BPA of the Month slider panel.',
+      },
+    },
+    {
       name: 'category',
       type: 'select',
       label: 'Category',

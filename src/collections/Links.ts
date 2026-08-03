@@ -83,6 +83,26 @@ export const Links: CollectionConfig = {
       },
     },
     {
+      name: 'isFeaturedBpa',
+      type: 'checkbox',
+      label: 'Featured on BPA Page',
+      defaultValue: false,
+      admin: {
+        position: 'sidebar',
+        description: 'Featured links appear on the BPA page resource section.',
+      },
+    },
+    {
+      name: 'isFeaturedBadsen',
+      type: 'checkbox',
+      label: 'Featured on Badsen Page',
+      defaultValue: false,
+      admin: {
+        position: 'sidebar',
+        description: 'Featured links appear on the Badsen (Badan Kesenatoran) page resource section.',
+      },
+    },
+    {
       name: 'icon',
       type: 'select',
       label: 'Icon',
