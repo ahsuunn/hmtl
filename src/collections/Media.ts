@@ -82,7 +82,7 @@ export const Media: CollectionConfig = {
       type: 'select',
       label: 'Category',
       options: [
-        { label: 'ENVMovement', value: 'envmovement' },
+        { label: 'Laskar Hijau', value: 'envmovement' },
         { label: 'Banner / Slider', value: 'banner' },
         { label: 'Poster / Pamphlet', value: 'poster' },
         { label: 'Events', value: 'events' },

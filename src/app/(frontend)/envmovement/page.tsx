@@ -4,9 +4,9 @@ import GalleryGrid from '@/components/GalleryGrid'
 import BentoGrid from '@/components/BentoGrid'
 
 export const metadata: Metadata = {
-  title: 'ENVMovement — HMTL',
+  title: 'Laskar Hijau — HMTL',
   description:
-    'Galeri & dokumentasi gerakan ENVMovement oleh Himpunan Mahasiswa Teknik Lingkungan — aksi nyata untuk kelestarian lingkungan.',
+    'Galeri & dokumentasi gerakan Laskar Hijau oleh Himpunan Mahasiswa Teknik Lingkungan ITB — aksi nyata untuk kelestarian lingkungan.',
 }
 
 export const revalidate = 60
@@ -78,7 +78,7 @@ export default async function ENVMovementPage() {
             className="font-heading text-5xl md:text-6xl font-bold"
             style={{ color: 'var(--color-cream)', letterSpacing: 0 }}
           >
-            ENVMovement
+            Laskar Hijau
           </h1>
           <p
             className="font-body text-xl mt-4 max-w-2xl opacity-80"
@@ -104,7 +104,7 @@ export default async function ENVMovementPage() {
                 className="section-title text-2xl md:text-4xl"
                 style={{ color: 'var(--color-forest)', letterSpacing: 0 }}
               >
-                ENVMovement Highlights
+                Laskar Hijau Gallery
               </h2>
               <div className="divider-green mt-2" />
             </div>
@@ -180,13 +180,13 @@ export default async function ENVMovementPage() {
               className="font-heading text-2xl mb-2"
               style={{ color: 'var(--color-forest)', letterSpacing: 0 }}
             >
-              Belum ada foto ENVMovement
+              Belum ada foto Laskar Hijau
             </p>
             <p
               className="font-body"
               style={{ color: 'var(--color-forest)', letterSpacing: 0 }}
             >
-              Foto kegiatan ENVMovement akan ditampilkan di sini.
+              Foto kegiatan Laskar Hijau akan ditampilkan di sini.
             </p>
           </div>
         )}

@@ -6,7 +6,7 @@ import { usePathname } from 'next/navigation'
 
 const navLinks = [
   { href: '/', label: 'Home' },
-  { href: '/envmovement', label: 'ENVMovement' },
+  { href: '/envmovement', label: 'Laskar Hijau' },
   { href: '/resources', label: 'Resources' },
 ]
 

@@ -8,7 +8,7 @@ import PosterRow from '@/components/PosterRow'
 import PromoBanner from '@/components/PromoBanner'
 
 export const metadata: Metadata = {
-  title: 'HMTL — Himpunan Mahasiswa Teknik Lingkungan',
+  title: 'HMTL — Himpunan Mahasiswa Teknik Lingkungan ITB',
   description:
     'Website resmi HMTL. Efficiency, Transparency, Creativity, Dedicated — membangun generasi lingkungan yang berdampak.',
 }

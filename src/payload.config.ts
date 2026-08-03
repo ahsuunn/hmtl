@@ -29,12 +29,12 @@ export default buildConfig({
     user: 'users',
     meta: {
       titleSuffix: '— HMTL Admin',
-      description: 'Content management for HMTL (Himpunan Mahasiswa Teknik Lingkungan)',
+      description: 'Content management for HMTL (Himpunan Mahasiswa Teknik Lingkungan ITB)',
       icons: [
         {
           rel: 'icon',
-          type: 'image/svg+xml',
-          url: '/favicon.svg',
+          type: 'image/x-icon',
+          url: '/favicon.ico',
         },
       ],
     },
@@ -157,7 +157,7 @@ export default buildConfig({
           name: 'heroTitle',
           type: 'text',
           label: 'Hero Title',
-          defaultValue: 'Himpunan Mahasiswa Teknik Lingkungan',
+          defaultValue: 'Himpunan Mahasiswa Teknik Lingkungan ITB',
         },
         {
           name: 'heroSubtitle',

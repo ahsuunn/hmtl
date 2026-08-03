@@ -298,7 +298,7 @@ export default function EventTimeline({ events }: EventTimelineProps) {
               return (
                 <div
                   key={event.id}
-                  className="p-4 rounded-sm border bg-cream/90 relative"
+                  className="p-4 rounded-md border border-forest/15 bg-gradient-to-r from-forest/5 to-cream/90 relative"
                   style={{
                     borderLeft: `4px solid ${teamColor}`,
                   }}

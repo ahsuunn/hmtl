@@ -33,7 +33,7 @@ export default function Footer({ socialLinks = [] }: FooterProps) {
                   HMTL
                 </p>
                 <p className="font-body text-xs opacity-60" style={{ color: 'var(--color-cream)', letterSpacing: 0 }}>
-                  Himpunan Mahasiswa Teknik Lingkungan
+                  Himpunan Mahasiswa Teknik Lingkungan ITB
                 </p>
               </div>
             </div>
@@ -47,7 +47,7 @@ export default function Footer({ socialLinks = [] }: FooterProps) {
             <ul className="space-y-2">
               {[
                 { href: '/', label: 'Home' },
-                { href: '/envmovement', label: 'ENVMovement' },
+                { href: '/envmovement', label: 'Laskar Hijau' },
                 { href: '/resources', label: 'Resource Center' },
               ].map((link) => (
                 <li key={link.href}>
@@ -92,7 +92,7 @@ export default function Footer({ socialLinks = [] }: FooterProps) {
           style={{ borderTop: '1px solid rgba(247, 244, 213, 0.1)' }}
         >
           <p className="font-body text-xs opacity-40" style={{ color: 'var(--color-cream)', letterSpacing: 0 }}>
-            © {new Date().getFullYear()} HMTL — Himpunan Mahasiswa Teknik Lingkungan. All rights reserved.
+            © {new Date().getFullYear()} HMTL — Himpunan Mahasiswa Teknik Lingkungan ITB. All rights reserved.
           </p>
           <p className="font-body text-xs opacity-40" style={{ color: 'var(--color-cream)', letterSpacing: 0 }}>
             Built with Payload CMS & Next.js

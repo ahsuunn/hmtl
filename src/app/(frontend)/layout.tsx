@@ -7,10 +7,10 @@ import '../globals.css'
 export const metadata: Metadata = {
   title: {
     template: '%s | HMTL',
-    default: 'HMTL — Himpunan Mahasiswa Teknik Lingkungan',
+    default: 'HMTL — Himpunan Mahasiswa Teknik Lingkungan ITB',
   },
   description:
-    'Himpunan Mahasiswa Teknik Lingkungan — Efficiency, Transparency, Creativity, Dedicated.',
+    'Himpunan Mahasiswa Teknik Lingkungan ITB — Efficiency, Transparency, Creativity, Dedicated.',
   keywords: ['HMTL', 'Teknik Lingkungan', 'Environmental Engineering', 'Himpunan Mahasiswa'],
   openGraph: {
     type: 'website',
@@ -29,6 +29,8 @@ export default async function FrontendLayout({ children }: { children: React.Rea
   return (
     <html lang="id">
       <head>
+        <link rel="icon" href="/favicon.ico" sizes="any" />
+        <link rel="shortcut icon" href="/favicon.ico" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link
